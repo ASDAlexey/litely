@@ -2,7 +2,7 @@ var translations = {
   ru: {
     'nav.features': 'Возможности',
     'nav.download': 'Скачать',
-    'hero.badge': 'Open Source \u00b7 v0.6',
+    'hero.badge': 'Free \u00b7 v0.6',
     'hero.title': 'Сжимай медиа.<br>Сохраняй качество.',
     'hero.subtitle':
       'Десктопное приложение для пакетного сжатия изображений и видео. FFmpeg под капотом, нативная скорость, нулевой трафик в облако.',
@@ -40,9 +40,9 @@ var translations = {
     'stats.video': 'сжатие видео (HEVC)',
     'stats.cloud': 'данных в облако',
     'stats.free_val': 'Бесплатно',
-    'stats.free': 'навсегда, MIT',
+    'stats.free': 'начни прямо сейчас',
     'download.heading': 'Скачать Litely',
-    'download.desc': 'Бесплатно и с открытым исходным кодом. Выберите вашу платформу.',
+    'download.desc': 'Бесплатно. Выберите вашу платформу.',
     'download.coming': 'Скоро',
     'download.all': 'Все версии на GitHub \u2192',
     'download.your_os': 'ваша система',
@@ -50,7 +50,7 @@ var translations = {
   en: {
     'nav.features': 'Features',
     'nav.download': 'Download',
-    'hero.badge': 'Open Source \u00b7 v0.6',
+    'hero.badge': 'Free \u00b7 v0.6',
     'hero.title': 'Compress media.<br>Keep quality.',
     'hero.subtitle':
       'A desktop app for batch image and video compression. FFmpeg under the hood, native speed, zero cloud traffic.',
@@ -88,9 +88,9 @@ var translations = {
     'stats.video': 'video compression (HEVC)',
     'stats.cloud': 'data to cloud',
     'stats.free_val': 'Free',
-    'stats.free': 'forever, MIT',
+    'stats.free': 'start now',
     'download.heading': 'Download Litely',
-    'download.desc': 'Free and open source. Choose your platform.',
+    'download.desc': 'Free to use. Choose your platform.',
     'download.coming': 'Coming soon',
     'download.all': 'All releases on GitHub \u2192',
     'download.your_os': 'your system',
