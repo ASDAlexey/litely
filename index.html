@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Litely — lightweight desktop app for batch image and video compression. HEVC, H.264, AV1, WebP, AVIF. Free & open source." />
+    <meta property="og:title" content="Litely — Lightweight Media Compressor" />
+    <meta property="og:description" content="Batch compress images and videos without losing quality. Free, open source, powered by FFmpeg." />
+    <meta property="og:type" content="website" />
+    <title>Litely — Сжатие медиа без потери качества</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <a href="#" class="header__logo">
+          <span class="header__logo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+          </span>
+          Litely
+        </a>
+        <nav class="header__nav">
+          <a href="#features" data-i18n="nav.features">Возможности</a>
+          <a href="#download" data-i18n="nav.download">Скачать</a>
+          <a href="https://github.com/ASDAlexey/litely" target="_blank" rel="noopener">GitHub</a>
+          <button class="lang-toggle" type="button" id="langToggle">EN</button>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero__badge" data-i18n="hero.badge">Open Source &middot; v0.6</div>
+        <h1 class="hero__title" data-i18n="hero.title">Сжимай медиа.<br />Сохраняй качество.</h1>
+        <p class="hero__subtitle" data-i18n="hero.subtitle">
+          Десктопное приложение для пакетного сжатия изображений и видео. FFmpeg под капотом, нативная скорость, нулевой трафик в облако.
+        </p>
+
+        <!-- OS-detected primary download -->
+        <div class="hero__actions" id="heroDownload">
+          <a href="#download" class="btn btn_primary" id="primaryDownload">
+            <svg class="btn__icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span data-i18n="download.auto">Скачать для вашей системы</span>
+          </a>
+        </div>
+
+        <p class="hero__hint" id="heroHint" data-i18n="hero.hint">
+          macOS 11+ &middot; Бесплатно &middot; Нативное приложение
+        </p>
+      </div>
+    </section>
+
+    <section class="features" id="features">
+      <div class="container">
+        <h2 class="features__heading" data-i18n="features.heading">Возможности</h2>
+        <div class="features__grid">
+
+          <div class="features__card">
+            <div class="features__card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            </div>
+            <h3 class="features__card-title" data-i18n="features.video.title">Видео</h3>
+            <ul class="features__list">
+              <li data-i18n="features.video.hevc">H.265 (HEVC) — максимальное сжатие</li>
+              <li data-i18n="features.video.h264">H.264 — универсальная совместимость</li>
+              <li data-i18n="features.video.av1">AV1 — новейший стандарт</li>
+              <li data-i18n="features.video.hw">GPU-ускорение (VideoToolbox)</li>
+              <li data-i18n="features.video.quality">3 уровня качества + CRF</li>
+            </ul>
+          </div>
+
+          <div class="features__card">
+            <div class="features__card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            </div>
+            <h3 class="features__card-title" data-i18n="features.images.title">Изображения</h3>
+            <ul class="features__list">
+              <li data-i18n="features.images.webp">WebP — оптимальный баланс</li>
+              <li data-i18n="features.images.avif">AVIF — следующее поколение</li>
+              <li data-i18n="features.images.jpeg">JPEG — MozJPEG оптимизация</li>
+              <li data-i18n="features.images.png">PNG — сжатие без потерь (OxiPNG)</li>
+              <li data-i18n="features.images.resize">Ресайз и мультиресайз</li>
+            </ul>
+          </div>
+
+          <div class="features__card">
+            <div class="features__card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"/><polyline points="13 2 13 9 20 9"/></svg>
+            </div>
+            <h3 class="features__card-title" data-i18n="features.workflow.title">Автоматизация</h3>
+            <ul class="features__list">
+              <li data-i18n="features.workflow.watch">Отслеживание папок</li>
+              <li data-i18n="features.workflow.dragdrop">Drag & Drop файлов</li>
+              <li data-i18n="features.workflow.batch">Пакетная обработка</li>
+              <li data-i18n="features.workflow.clipboard">Копирование в буфер обмена</li>
+              <li data-i18n="features.workflow.delete">Удаление исходников</li>
+            </ul>
+          </div>
+
+          <div class="features__card">
+            <div class="features__card-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </div>
+            <h3 class="features__card-title" data-i18n="features.tools.title">Инструменты</h3>
+            <ul class="features__list">
+              <li data-i18n="features.tools.compare">Сравнение до и после</li>
+              <li data-i18n="features.tools.target">Целевой размер файла</li>
+              <li data-i18n="features.tools.convert">Конвертация форматов</li>
+              <li data-i18n="features.tools.audio">Извлечение аудио</li>
+              <li data-i18n="features.tools.history">История обработки</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div class="container">
+        <div class="stats__grid">
+          <div class="stats__item">
+            <span class="stats__value">90%</span>
+            <span class="stats__label" data-i18n="stats.reduction">сжатие изображений</span>
+          </div>
+          <div class="stats__item">
+            <span class="stats__value">60%</span>
+            <span class="stats__label" data-i18n="stats.video">сжатие видео (HEVC)</span>
+          </div>
+          <div class="stats__item">
+            <span class="stats__value">0</span>
+            <span class="stats__label" data-i18n="stats.cloud">данных в облако</span>
+          </div>
+          <div class="stats__item">
+            <span class="stats__value" data-i18n="stats.free_val">Бесплатно</span>
+            <span class="stats__label" data-i18n="stats.free">навсегда, MIT</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="download" id="download">
+      <div class="container">
+        <h2 data-i18n="download.heading">Скачать Litely</h2>
+        <p class="download__desc" data-i18n="download.desc">Бесплатно и с открытым исходным кодом. Выберите вашу платформу.</p>
+
+        <!-- Platform cards -->
+        <div class="download__platforms">
+          <div class="download__platform" id="platform-mac">
+            <div class="download__platform-header">
+              <svg class="download__platform-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+              <div>
+                <h3 class="download__platform-name">macOS</h3>
+                <span class="download__platform-req">macOS 11+</span>
+              </div>
+              <span class="download__platform-detect" id="detect-mac"></span>
+            </div>
+            <div class="download__platform-actions">
+              <a href="https://github.com/ASDAlexey/litely/releases/latest/download/Litely_aarch64.dmg" class="btn btn_primary btn_small">
+                Apple Silicon (M1+)
+              </a>
+              <a href="https://github.com/ASDAlexey/litely/releases/latest/download/Litely_x64.dmg" class="btn btn_secondary btn_small">
+                Intel
+              </a>
+            </div>
+          </div>
+
+          <div class="download__platform download__platform_soon" id="platform-windows">
+            <div class="download__platform-header">
+              <svg class="download__platform-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
+              <div>
+                <h3 class="download__platform-name">Windows</h3>
+                <span class="download__platform-req">Windows 10+</span>
+              </div>
+              <span class="download__platform-detect" id="detect-windows"></span>
+            </div>
+            <div class="download__platform-actions">
+              <span class="download__platform-coming" data-i18n="download.coming">Скоро</span>
+            </div>
+          </div>
+
+          <div class="download__platform download__platform_soon" id="platform-linux">
+            <div class="download__platform-header">
+              <svg class="download__platform-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 0 0-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.362 1.97 1.228.856-.134 1.484-.715 1.816-1.468.22-.49.262-.868.207-1.138-.027-.135-.1-.263-.16-.401-.064-.142-.149-.271-.188-.533-.039-.259.04-.6.103-.799.07-.199.143-.397.198-.597.257-.92.206-1.733-.177-2.47a3.44 3.44 0 0 0-.09-.186c-.275-.47-.94-.986-1.44-1.418-.254-.221-.5-.403-.665-.534-.166-.133-.249-.17-.246-.267.007-.137.02-.27.02-.395 0-.665-.12-1.33-.378-2.005-.392-1.029-1.07-2.08-2.07-3.16-.42-.45-.796-.867-1.104-1.284-.307-.418-.528-.84-.624-1.295-.095-.46-.07-.927.036-1.384.107-.46.29-.906.52-1.324.465-.828.653-1.632.483-2.403-.1-.47-.376-.862-.655-1.146-.282-.285-.566-.455-.75-.55a2.46 2.46 0 0 0-.593-.2c-.096-.015-.174-.023-.27-.023z"/></svg>
+              <div>
+                <h3 class="download__platform-name">Linux</h3>
+                <span class="download__platform-req">Ubuntu 22+, Fedora 38+</span>
+              </div>
+              <span class="download__platform-detect" id="detect-linux"></span>
+            </div>
+            <div class="download__platform-actions">
+              <span class="download__platform-coming" data-i18n="download.coming">Скоро</span>
+            </div>
+          </div>
+        </div>
+
+        <a
+          href="https://github.com/ASDAlexey/litely/releases"
+          class="download__all"
+          target="_blank"
+          rel="noopener"
+          data-i18n="download.all"
+          >Все версии на GitHub &rarr;</a
+        >
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2025 Litely &middot; MIT License &middot; <a href="https://github.com/ASDAlexey/litely" target="_blank" rel="noopener">GitHub</a></p>
+      </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+  </body>
+</html>
