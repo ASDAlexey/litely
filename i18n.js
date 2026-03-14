@@ -1,111 +1,243 @@
 var translations = {
-  ru: {
-    'nav.features': 'Возможности',
-    'nav.download': 'Скачать',
-    'hero.badge': 'Free \u00b7 v0.7.0',
-    'hero.title': 'Сжимай медиа.<br>Сохраняй качество.',
-    'hero.subtitle':
-      'Десктопное приложение для пакетного сжатия изображений и видео. FFmpeg под капотом, нативная скорость, нулевой трафик в облако.',
-    'hero.hint': 'macOS 11+ \u00b7 Бесплатно \u00b7 Нативное приложение',
-    'download.auto': 'Скачать для вашей системы',
-    'download.auto.mac': 'Скачать для macOS',
-    'download.auto.win': 'Скачать для Windows',
-    'download.auto.linux': 'Скачать для Linux',
-    'features.heading': 'Возможности',
-    'features.video.title': 'Видео',
-    'features.video.hevc': 'H.265 (HEVC) — максимальное сжатие',
-    'features.video.h264': 'H.264 — универсальная совместимость',
-    'features.video.av1': 'AV1 — новейший стандарт',
-    'features.video.hw': 'GPU-ускорение (VideoToolbox)',
-    'features.video.quality': 'Качество: компактное, оптимальное, максимальное',
-    'features.images.title': 'Изображения',
-    'features.images.webp': 'WebP — лучший баланс размера и качества',
-    'features.images.avif': 'AVIF — максимальное сжатие',
-    'features.images.jpeg': 'JPEG — универсальная совместимость',
-    'features.images.png': 'PNG — без потерь (lossless)',
-    'features.images.resize': 'Ресайз и мультиресайз',
-    'features.workflow.title': 'Файлы и автоматизация',
-    'features.workflow.watch': 'Отслеживание папок',
-    'features.workflow.dragdrop': 'Drag & Drop файлов',
-    'features.workflow.batch': 'Пакетная обработка',
-    'features.workflow.dest': 'Папка назначения — как у исходника или своя',
-    'features.workflow.delete': 'Удаление исходников после сжатия',
-    'features.workflow.clipboard': 'Копирование результата в буфер',
-    'features.tools.title': 'Настройки и инструменты',
-    'features.tools.target': 'Целевой размер файла (КБ)',
-    'features.tools.metadata': 'Удаление метаданных',
-    'features.tools.maxcompress': 'Максимальное сжатие',
-    'features.tools.resize': 'Ресайз с режимами: вписать, обрезать, растянуть',
-    'features.tools.gpu': 'GPU-кодирование видео',
-    'features.tools.history': 'История обработки',
-    'hero.dark': 'Тёмная тема',
-    'hero.light': 'Светлая тема',
-    'stats.reduction': 'сжатие изображений',
-    'stats.video': 'сжатие видео (HEVC)',
-    'stats.cloud': 'офлайн, без облака',
-    'stats.free_val': 'Бесплатно',
-    'stats.free': 'начни прямо сейчас',
-    'download.heading': 'Скачать Litely',
-    'download.desc': 'Бесплатно. Выберите вашу платформу.',
-    'download.coming': 'Скоро',
-    'download.all': 'Все версии на GitHub \u2192',
-    'download.your_os': 'ваша система',
-  },
   en: {
     'nav.features': 'Features',
+    'nav.usecases': 'Use Cases',
     'nav.download': 'Download',
-    'hero.badge': 'Free \u00b7 v0.7.0',
-    'hero.title': 'Compress media.<br>Keep quality.',
+    'hero.title': 'Compress Everything.<br>Automatically.',
     'hero.subtitle':
-      'A desktop app for batch image and video compression. FFmpeg under the hood, native speed, zero cloud traffic.',
-    'hero.hint': 'macOS 11+ \u00b7 Free \u00b7 Native app',
-    'download.auto': 'Download for your system',
-    'download.auto.mac': 'Download for macOS',
-    'download.auto.win': 'Download for Windows',
-    'download.auto.linux': 'Download for Linux',
-    'features.heading': 'Features',
-    'features.video.title': 'Video',
-    'features.video.hevc': 'H.265 (HEVC) — maximum compression',
-    'features.video.h264': 'H.264 — universal compatibility',
-    'features.video.av1': 'AV1 — latest standard',
-    'features.video.hw': 'GPU acceleration (VideoToolbox)',
-    'features.video.quality': 'Quality: compact, optimal, maximum',
-    'features.images.title': 'Images',
-    'features.images.webp': 'WebP — best size & quality balance',
-    'features.images.avif': 'AVIF — maximum compression',
-    'features.images.jpeg': 'JPEG — universal compatibility',
-    'features.images.png': 'PNG — lossless',
-    'features.images.resize': 'Resize & multi-resize',
-    'features.workflow.title': 'Files & Automation',
-    'features.workflow.watch': 'Folder watching',
-    'features.workflow.dragdrop': 'Drag & Drop files',
-    'features.workflow.batch': 'Batch processing',
-    'features.workflow.dest': 'Output folder — same as source or custom',
-    'features.workflow.delete': 'Delete source files after compression',
-    'features.workflow.clipboard': 'Copy result to clipboard',
-    'features.tools.title': 'Settings & Tools',
-    'features.tools.target': 'Target file size (KB)',
-    'features.tools.metadata': 'Strip metadata',
-    'features.tools.maxcompress': 'Maximum compression mode',
-    'features.tools.resize': 'Resize modes: fit, crop, stretch',
-    'features.tools.gpu': 'GPU video encoding',
-    'features.tools.history': 'Processing history',
+      'Add a folder — Litely watches for new files and compresses them in the background. Videos, images, zero effort.',
+    'hero.cta': 'Download for Free',
+    'hero.hint': 'macOS 11+ · Free · Native app',
     'hero.dark': 'Dark theme',
     'hero.light': 'Light theme',
-    'stats.reduction': 'image compression',
-    'stats.video': 'video compression (HEVC)',
-    'stats.cloud': 'offline, no cloud',
-    'stats.free_val': 'Free',
-    'stats.free': 'start now',
-    'download.heading': 'Download Litely',
-    'download.desc': 'Free to use. Choose your platform.',
-    'download.coming': 'Coming soon',
-    'download.all': 'All releases on GitHub \u2192',
-    'download.your_os': 'your system',
+    'demo.status': '3 files compressed · 3.1 GB saved',
+    'stats.video': 'video compression',
+    'stats.image': 'image compression',
+    'stats.formats': 'video formats',
+    'stats.free': 'forever',
+    'watch.label': 'Smart Automation',
+    'watch.title': 'Set It and Forget It',
+    'watch.desc':
+      'Add up to 5 folders — Litely watches them around the clock and compresses every new file automatically.',
+    'watch.f1': 'Watch up to 5 folders simultaneously',
+    'watch.f2': 'Real-time detection of new files',
+    'watch.f3': 'Settings persist between restarts',
+    'watch.f4': 'Smart filtering — skips hidden, compressed, and output files',
+    'watch.s1': 'Watching · 24 files',
+    'watch.s2': 'Watching · 156 files',
+    'watch.s3': 'Watching · 8 files',
+    'video.label': 'Video Compression',
+    'video.title': 'Every Codec. Maximum Savings.',
+    'video.desc':
+      'From H.264 to AV1 — pick the perfect balance between compatibility and compression ratio.',
+    'video.f1': 'GPU acceleration via VideoToolbox (macOS)',
+    'video.f2': '3 quality presets: Compact, Optimal, Maximum',
+    'video.f3': 'Two-pass encoding for optimal quality/size',
+    'video.f4': 'Convert: MP4, MOV, AVI, MKV, WebM, FLV, GIF',
+    'video.f5': 'Extract audio track from video',
+    'video.f6': 'Resize video (fit / width / height)',
+    'video.f7': 'Target file size — auto quality adjustment',
+    'video.t1': 'Compatible',
+    'video.t2': 'Balanced',
+    'video.t3': 'Maximum',
+    'video.caption': 'Compression ratio →',
+    'images.label': 'Image Compression',
+    'images.title': 'Pixel-Perfect Optimization',
+    'images.desc':
+      'From WebP to AVIF — choose the right format and quality for every use case.',
+    'images.f1': 'Quality slider 1–100',
+    'images.f2': 'Strip EXIF & ICC metadata',
+    'images.f3': 'Max Effort mode — slower, better compression',
+    'images.f4': 'Target size in KB — auto quality adjustment',
+    'images.f5': 'Batch resize — multiple sizes from one image',
+    'images.f6': 'Visual before/after comparison',
+    'images.input': 'Input: WebP, AVIF, JPEG, PNG, HEIC/HEIF, BMP, TIFF',
+    'images.quality': 'Quality',
+    'images.before': 'Before',
+    'images.after': 'After',
+    'tasks.label': 'Task Management',
+    'tasks.title': 'Full Control Over Every File',
+    'tasks.desc': 'Pause, resume, cancel — manage every compression task with precision.',
+    'tasks.c1t': 'Pause & Resume',
+    'tasks.c1d': 'Pause, resume, or cancel individual tasks at any time.',
+    'tasks.c2t': 'Real-Time Progress',
+    'tasks.c2d': 'Live progress with estimated time remaining for each task.',
+    'tasks.c3t': 'Smart History',
+    'tasks.c3d': 'Task history grouped by date with 7-day auto-cleanup.',
+    'tasks.c4t': 'Size Tracking',
+    'tasks.c4d': 'See input size, output size, and percentage reduction for every file.',
+    'tasks.c5t': 'Tray Progress',
+    'tasks.c5d': 'Batch processing progress visible right from the system tray.',
+    'tasks.c6t': 'Date Grouping',
+    'tasks.c6d': 'Tasks grouped by date — today, yesterday, and older.',
+    'int.label': 'Seamless Integration',
+    'int.title': 'Fits Right Into Your Workflow',
+    'int.desc': 'Designed to work quietly in the background and stay out of your way.',
+    'int.c1t': 'Drag & Drop',
+    'int.c1d': 'Drop files directly into the app window to start compression.',
+    'int.c2t': 'System Tray',
+    'int.c2d': 'Runs quietly in the system tray — always ready, never in the way.',
+    'int.c3t': 'Floating Progress',
+    'int.c3d': 'Always-on-top progress panel — see status at a glance.',
+    'int.c4t': 'Auto-Copy',
+    'int.c4d': 'Compressed file is automatically copied to your clipboard.',
+    'int.c5t': 'Auto-Delete',
+    'int.c5d': 'Optionally remove originals after successful compression.',
+    'int.c6t': 'Dark & Light',
+    'int.c6d': 'Both themes supported — switch to match your preference.',
+    'perf.label': 'Native Performance',
+    'perf.title': 'Not Electron. Not Slow.',
+    'perf.desc': 'Built on Tauri 2 + Rust for minimal memory footprint and maximum speed.',
+    'perf.f1': 'Native binary — not a browser in disguise',
+    'perf.f2': 'Swift VideoToolbox module for hardware acceleration',
+    'perf.f3': 'Virtual scrolling — smooth with thousands of files',
+    'perf.f4': 'Zoneless Angular — instant UI response',
+    'perf.electron': 'Typical Electron app',
+    'perf.caption': 'Memory usage at idle',
+    'uc.label': "Who It's For",
+    'uc.title': 'Built for Everyone',
+    'uc.c1t': 'Content Creators',
+    'uc.c1d': 'Compress videos before uploading to YouTube, TikTok, or Instagram.',
+    'uc.c2t': 'Photographers',
+    'uc.c2d': 'Batch optimize images for web galleries and client deliverables.',
+    'uc.c3t': 'Video Editors',
+    'uc.c3d': 'Quick compression for review copies and sharing with clients.',
+    'uc.c4t': 'SMM Managers',
+    'uc.c4d': 'Optimize media before publishing to social platforms.',
+    'uc.c5t': 'Developers',
+    'uc.c5d': 'Compress image and video assets for web projects and apps.',
+    'uc.c6t': 'Everyone Else',
+    'uc.c6d': 'Free up gigabytes of disk space without losing quality.',
+    'dl.title': 'Download Litely',
+    'dl.desc': 'Free to use. Choose your platform.',
+    'dl.coming': 'Coming soon',
+    'dl.all': 'All releases on GitHub →',
+    'dl.your_os': 'your system',
+    'dl.auto.mac': 'Download for macOS',
+    'dl.auto.win': 'Download for Windows',
+    'dl.auto.linux': 'Download for Linux',
+  },
+  ru: {
+    'nav.features': 'Возможности',
+    'nav.usecases': 'Сценарии',
+    'nav.download': 'Скачать',
+    'hero.title': 'Сжимай всё.<br>Автоматически.',
+    'hero.subtitle':
+      'Добавь папку — Litely следит за новыми файлами и сжимает их в фоне. Видео, изображения, без усилий.',
+    'hero.cta': 'Скачать бесплатно',
+    'hero.hint': 'macOS 11+ · Бесплатно · Нативное приложение',
+    'hero.dark': 'Тёмная тема',
+    'hero.light': 'Светлая тема',
+    'demo.status': '3 файла сжато · 3.1 ГБ сэкономлено',
+    'stats.video': 'сжатие видео',
+    'stats.image': 'сжатие изображений',
+    'stats.formats': 'форматов видео',
+    'stats.free': 'навсегда',
+    'watch.label': 'Умная автоматизация',
+    'watch.title': 'Настрой и забудь',
+    'watch.desc':
+      'Добавь до 5 папок — Litely следит за ними круглосуточно и сжимает каждый новый файл автоматически.',
+    'watch.f1': 'Наблюдение до 5 папок одновременно',
+    'watch.f2': 'Обнаружение новых файлов в реальном времени',
+    'watch.f3': 'Настройки сохраняются между перезапусками',
+    'watch.f4': 'Умная фильтрация — пропускает скрытые, сжатые и выходные файлы',
+    'watch.s1': 'Наблюдение · 24 файла',
+    'watch.s2': 'Наблюдение · 156 файлов',
+    'watch.s3': 'Наблюдение · 8 файлов',
+    'video.label': 'Сжатие видео',
+    'video.title': 'Все кодеки. Максимальная экономия.',
+    'video.desc':
+      'От H.264 до AV1 — выбери идеальный баланс между совместимостью и степенью сжатия.',
+    'video.f1': 'GPU-ускорение через VideoToolbox (macOS)',
+    'video.f2': '3 пресета качества: Компактный, Оптимальный, Максимальный',
+    'video.f3': 'Двухпроходное кодирование для лучшего качества/размера',
+    'video.f4': 'Конвертация: MP4, MOV, AVI, MKV, WebM, FLV, GIF',
+    'video.f5': 'Извлечение аудиодорожки из видео',
+    'video.f6': 'Ресайз видео (вписать / ширина / высота)',
+    'video.f7': 'Целевой размер файла — автоподбор качества',
+    'video.t1': 'Совместимый',
+    'video.t2': 'Сбалансированный',
+    'video.t3': 'Максимальный',
+    'video.caption': 'Степень сжатия →',
+    'images.label': 'Сжатие изображений',
+    'images.title': 'Идеальная оптимизация',
+    'images.desc':
+      'От WebP до AVIF — выбери формат и качество для каждого случая.',
+    'images.f1': 'Ползунок качества 1–100',
+    'images.f2': 'Удаление метаданных EXIF и ICC',
+    'images.f3': 'Режим Max Effort — медленнее, но лучше сжатие',
+    'images.f4': 'Целевой размер в КБ — автоподбор качества',
+    'images.f5': 'Пакетный ресайз — несколько размеров из одного изображения',
+    'images.f6': 'Визуальное сравнение до/после',
+    'images.input': 'Входные форматы: WebP, AVIF, JPEG, PNG, HEIC/HEIF, BMP, TIFF',
+    'images.quality': 'Качество',
+    'images.before': 'До',
+    'images.after': 'После',
+    'tasks.label': 'Управление задачами',
+    'tasks.title': 'Полный контроль над каждым файлом',
+    'tasks.desc': 'Пауза, возобновление, отмена — управляй каждой задачей сжатия.',
+    'tasks.c1t': 'Пауза и возобновление',
+    'tasks.c1d': 'Ставь на паузу, возобновляй или отменяй отдельные задачи.',
+    'tasks.c2t': 'Прогресс в реальном времени',
+    'tasks.c2d': 'Текущий прогресс с оценкой оставшегося времени.',
+    'tasks.c3t': 'Умная история',
+    'tasks.c3d': 'История задач по датам с автоочисткой через 7 дней.',
+    'tasks.c4t': 'Отслеживание размера',
+    'tasks.c4d': 'Входной размер, выходной размер и процент уменьшения для каждого файла.',
+    'tasks.c5t': 'Прогресс в трее',
+    'tasks.c5d': 'Прогресс пакетной обработки прямо в системном трее.',
+    'tasks.c6t': 'Группировка по датам',
+    'tasks.c6d': 'Задачи сгруппированы: сегодня, вчера и ранее.',
+    'int.label': 'Интеграция с системой',
+    'int.title': 'Вписывается в ваш рабочий процесс',
+    'int.desc': 'Работает тихо в фоне и не мешает.',
+    'int.c1t': 'Drag & Drop',
+    'int.c1d': 'Перетащи файлы прямо в окно приложения.',
+    'int.c2t': 'Системный трей',
+    'int.c2d': 'Живёт в трее — всегда готов, никогда не мешает.',
+    'int.c3t': 'Плавающий прогресс',
+    'int.c3d': 'Панель прогресса поверх всех окон.',
+    'int.c4t': 'Автокопирование',
+    'int.c4d': 'Сжатый файл автоматически копируется в буфер обмена.',
+    'int.c5t': 'Автоудаление',
+    'int.c5d': 'Опционально удалять оригиналы после сжатия.',
+    'int.c6t': 'Тёмная и светлая',
+    'int.c6d': 'Обе темы — переключайся под настроение.',
+    'perf.label': 'Нативная скорость',
+    'perf.title': 'Не Electron. Не тормозит.',
+    'perf.desc': 'Построен на Tauri 2 + Rust — минимум памяти, максимум скорости.',
+    'perf.f1': 'Нативный бинарник — не браузер под маской',
+    'perf.f2': 'Swift-модуль VideoToolbox для аппаратного ускорения',
+    'perf.f3': 'Виртуальный скроллинг — плавно с тысячами файлов',
+    'perf.f4': 'Zoneless Angular — мгновенный отклик интерфейса',
+    'perf.electron': 'Типичное Electron-приложение',
+    'perf.caption': 'Потребление памяти в простое',
+    'uc.label': 'Для кого',
+    'uc.title': 'Создан для каждого',
+    'uc.c1t': 'Контент-креаторы',
+    'uc.c1d': 'Сжимай видео перед загрузкой на YouTube, TikTok или Instagram.',
+    'uc.c2t': 'Фотографы',
+    'uc.c2d': 'Пакетная оптимизация для веб-галерей и клиентов.',
+    'uc.c3t': 'Видеоредакторы',
+    'uc.c3d': 'Быстрое сжатие для ревью и шеринга с клиентами.',
+    'uc.c4t': 'SMM-менеджеры',
+    'uc.c4d': 'Оптимизация медиа перед публикацией.',
+    'uc.c5t': 'Разработчики',
+    'uc.c5d': 'Сжатие изображений и видео для веб-проектов.',
+    'uc.c6t': 'Все остальные',
+    'uc.c6d': 'Освободи гигабайты дискового пространства без потери качества.',
+    'dl.title': 'Скачать Litely',
+    'dl.desc': 'Бесплатно. Выберите платформу.',
+    'dl.coming': 'Скоро',
+    'dl.all': 'Все версии на GitHub →',
+    'dl.your_os': 'ваша система',
+    'dl.auto.mac': 'Скачать для macOS',
+    'dl.auto.win': 'Скачать для Windows',
+    'dl.auto.linux': 'Скачать для Linux',
   },
 };
 
-/* ── OS Detection ── */
+/* ═══ OS Detection ═══ */
 function detectOS() {
   var ua = navigator.userAgent || navigator.platform || '';
   if (/Mac/i.test(ua)) return 'mac';
@@ -118,47 +250,44 @@ function setupOSDetection() {
   var os = detectOS();
   var lang = getLang();
   var strings = translations[lang];
-
-  // Highlight detected platform card
   var platformIds = { mac: 'platform-mac', windows: 'platform-windows', linux: 'platform-linux' };
   var detectIds = { mac: 'detect-mac', windows: 'detect-windows', linux: 'detect-linux' };
 
   Object.keys(platformIds).forEach(function (key) {
     var el = document.getElementById(platformIds[key]);
     var detectEl = document.getElementById(detectIds[key]);
+    if (!el || !detectEl) return;
     if (key === os) {
-      el.classList.add('download__platform_detected');
-      el.classList.remove('download__platform_soon');
-      detectEl.textContent = '\u2713 ' + strings['download.your_os'];
+      el.classList.add('platform--detected');
+      el.classList.remove('platform--soon');
+      detectEl.textContent = '\u2713 ' + strings['dl.your_os'];
     } else {
-      el.classList.remove('download__platform_detected');
+      el.classList.remove('platform--detected');
       detectEl.textContent = '';
     }
   });
 
-  // Update hero download button
   var primaryBtn = document.getElementById('primaryDownload');
   var btnText = primaryBtn.querySelector('[data-i18n]');
-
   if (os === 'mac') {
     primaryBtn.href =
       'https://github.com/ASDAlexey/litely/releases/latest/download/Litely_aarch64.dmg';
-    btnText.textContent = strings['download.auto.mac'];
-    btnText.setAttribute('data-i18n', 'download.auto.mac');
+    btnText.textContent = strings['dl.auto.mac'];
+    btnText.setAttribute('data-i18n', 'dl.auto.mac');
   } else if (os === 'windows') {
     primaryBtn.href = '#download';
-    btnText.textContent = strings['download.auto.win'];
-    btnText.setAttribute('data-i18n', 'download.auto.win');
+    btnText.textContent = strings['dl.auto.win'];
+    btnText.setAttribute('data-i18n', 'dl.auto.win');
   } else if (os === 'linux') {
     primaryBtn.href = '#download';
-    btnText.textContent = strings['download.auto.linux'];
-    btnText.setAttribute('data-i18n', 'download.auto.linux');
+    btnText.textContent = strings['dl.auto.linux'];
+    btnText.setAttribute('data-i18n', 'dl.auto.linux');
   }
 }
 
-/* ── i18n ── */
+/* ═══ i18n ═══ */
 function getLang() {
-  return localStorage.getItem('litely-lang') || 'ru';
+  return localStorage.getItem('litely-lang') || 'en';
 }
 
 function setLang(lang) {
@@ -177,19 +306,98 @@ function applyLang(lang) {
   document.documentElement.lang = lang;
   document.title =
     lang === 'ru'
-      ? 'Litely \u2014 \u0421\u0436\u0430\u0442\u0438\u0435 \u043c\u0435\u0434\u0438\u0430 \u0431\u0435\u0437 \u043f\u043e\u0442\u0435\u0440\u0438 \u043a\u0430\u0447\u0435\u0441\u0442\u0432\u0430'
-      : 'Litely \u2014 Lightweight Media Compressor';
+      ? 'Litely \u2014 \u0410\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u0441\u0436\u0430\u0442\u0438\u0435 \u043c\u0435\u0434\u0438\u0430'
+      : 'Litely \u2014 Automatic Media Compression';
 
   var toggle = document.getElementById('langToggle');
   toggle.textContent = lang === 'ru' ? 'EN' : 'RU';
 
-  // Re-run OS detection to update dynamic labels
   setupOSDetection();
 }
 
+/* ═══ Scroll Reveal ═══ */
+function initScrollReveal() {
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.12, rootMargin: '0px 0px -40px 0px' },
+  );
+
+  document.querySelectorAll('[data-reveal]').forEach(function (el) {
+    observer.observe(el);
+  });
+}
+
+/* ═══ Counter Animation ═══ */
+function initCounters() {
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var el = entry.target;
+        observer.unobserve(el);
+
+        if (el.dataset.text) {
+          el.textContent = el.dataset.text;
+          return;
+        }
+
+        var target = parseInt(el.dataset.counter, 10);
+        var suffix = el.dataset.suffix || '';
+        var duration = 1800;
+        var start = performance.now();
+
+        function tick(now) {
+          var elapsed = now - start;
+          var progress = Math.min(elapsed / duration, 1);
+          // ease-out cubic
+          var eased = 1 - Math.pow(1 - progress, 3);
+          var current = Math.round(eased * target);
+          el.textContent = current + suffix;
+          if (progress < 1) {
+            requestAnimationFrame(tick);
+          }
+        }
+
+        requestAnimationFrame(tick);
+      });
+    },
+    { threshold: 0.5 },
+  );
+
+  document.querySelectorAll('[data-counter]').forEach(function (el) {
+    observer.observe(el);
+  });
+}
+
+/* ═══ Smooth Scroll for Nav ═══ */
+function initSmoothScroll() {
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener('click', function (e) {
+      var href = this.getAttribute('href');
+      if (href === '#') return;
+      var target = document.querySelector(href);
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+}
+
+/* ═══ Init ═══ */
 document.getElementById('langToggle').addEventListener('click', function () {
   var current = getLang();
   setLang(current === 'ru' ? 'en' : 'ru');
 });
 
 applyLang(getLang());
+initScrollReveal();
+initCounters();
+initSmoothScroll();
