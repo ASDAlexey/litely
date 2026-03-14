@@ -223,6 +223,20 @@ body {
   font-size: 0.8rem;
 }
 
+.hero__screenshot {
+  margin-top: 56px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px var(--border);
+}
+
+.hero__screenshot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* ── Features ── */
 .features {
   padding: 80px 0;
