@@ -1004,64 +1004,37 @@ body {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-}
-
-.perf-bar {
-  margin-bottom: 24px;
-}
-
-.perf-bar:last-of-type {
-  margin-bottom: 16px;
-}
-
-.perf-bar__header {
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 8px;
+  align-items: center;
+  justify-content: center;
 }
 
-.perf-bar__name {
-  font-size: 0.85rem;
+.perf-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.perf-stat__value {
+  font-size: 4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  background: linear-gradient(135deg, var(--green), #34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.perf-stat__value small {
+  font-size: 0.4em;
   font-weight: 600;
-  color: var(--text);
 }
 
-.perf-bar__value {
+.perf-stat__label {
   font-size: 0.85rem;
-  font-weight: 700;
-  color: var(--text-secondary);
-}
-
-.perf-bar__track {
-  height: 10px;
-  background: rgba(255, 255, 255, 0.04);
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.perf-bar__fill {
-  height: 100%;
-  width: 0;
-  border-radius: 5px;
-  transition: width 1.2s ease;
-}
-
-.perf-bar__fill--good {
-  background: linear-gradient(90deg, var(--green), #34d399);
-}
-
-.perf-bar__fill--bad {
-  background: linear-gradient(90deg, #ef4444, #f87171);
-}
-
-[data-reveal].revealed .perf-bar__fill {
-  width: var(--width);
-}
-
-.perf-visual__caption {
-  font-size: 0.75rem;
   color: var(--text-muted);
-  text-align: center;
 }
 
 /* ═══ Platforms / Download ═══ */
