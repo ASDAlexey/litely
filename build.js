@@ -4,7 +4,7 @@ const CleanCSS = require('clean-css');
 const { minify: minifyHTML } = require('html-minifier-terser');
 const { minify: minifyJS } = require('terser');
 
-const DIST = path.join(__dirname, 'dist');
+const DIST = path.join(__dirname, 'docs');
 
 async function build() {
   // Clean & create dist
@@ -46,7 +46,7 @@ async function build() {
   }
   console.log(`Images: ${fs.readdirSync(imagesDir).length} files copied`);
 
-  console.log('\nBuild complete → dist/');
+  console.log('\nBuild complete → docs/');
 }
 
 build().catch(console.error);

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="feather" x1="256" y1="128" x2="768" y2="896" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#60a5fa" />
+      <stop offset="1" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="1024" rx="228" fill="#0a1628" />
+  <path
+    d="M691.2 230.4C691.2 230.4 281.6 460.8 307.2 716.8C307.2 716.8 384 588.8 486.4 537.6C409.6 614.4 358.4 716.8 358.4 716.8C358.4 716.8 742.4 486.4 691.2 230.4Z"
+    fill="url(#feather)"
+    opacity="0.9"
+  />
+  <path
+    d="M486.4 537.6C384 588.8 332.8 691.2 332.8 716.8C332.8 716.8 537.6 409.6 691.2 230.4"
+    stroke="white"
+    stroke-width="19.2"
+    opacity="0.5"
+    fill="none"
+  />
+  <line
+    x1="307.2"
+    y1="716.8"
+    x2="256"
+    y2="819.2"
+    stroke="#60a5fa"
+    stroke-width="19.2"
+    stroke-linecap="round"
+    opacity="0.6"
+  />
+  <circle cx="742.4" cy="204.8" r="15.36" fill="#93c5fd" opacity="0.7" />
+  <circle cx="793.6" cy="307.2" r="10.24" fill="#60a5fa" opacity="0.5" />
+</svg>
