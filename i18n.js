@@ -19,7 +19,7 @@ const translations = {
     'watch.label': 'Smart Automation',
     'watch.title': 'Set It and Forget It',
     'watch.desc':
-      'Add up to 5 folders — Litely watches them around the clock and compresses every new file automatically.',
+      'Add up to 3 folders — Litely watches them around the clock and compresses every new file automatically.',
     'watch.f1': 'Watch up to 5 folders simultaneously',
     'watch.f2': 'Real-time detection of new files',
     'watch.f3': 'Settings persist between restarts',
@@ -138,7 +138,7 @@ const translations = {
     'watch.label': 'Умная автоматизация',
     'watch.title': 'Настрой и забудь',
     'watch.desc':
-      'Добавь до 5 папок — Litely следит за ними круглосуточно и сжимает каждый новый файл автоматически.',
+      'Добавь до 3 папок — Litely следит за ними круглосуточно и сжимает каждый новый файл автоматически.',
     'watch.f1': 'Наблюдение до 5 папок одновременно',
     'watch.f2': 'Обнаружение новых файлов в реальном времени',
     'watch.f3': 'Настройки сохраняются между перезапусками',
