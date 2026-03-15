@@ -112,11 +112,17 @@
         <!-- Screenshots -->
         <div class="hero__screenshots" data-reveal>
           <div class="hero__screenshot">
-            <img src="images/app-dark.webp" alt="Litely app interface in dark theme showing compression controls" width="960" height="540" loading="lazy" />
+            <picture>
+              <source srcset="images/app-dark.avif" type="image/avif" />
+              <img src="images/app-dark.webp" alt="Litely app interface in dark theme showing compression controls" width="960" height="540" loading="lazy" />
+            </picture>
             <span class="hero__screenshot-label" data-i18n="hero.dark">Dark theme</span>
           </div>
           <div class="hero__screenshot">
-            <img src="images/app-light.webp" alt="Litely app interface in light theme showing compression controls" width="960" height="540" loading="lazy" />
+            <picture>
+              <source srcset="images/app-light.avif" type="image/avif" />
+              <img src="images/app-light.webp" alt="Litely app interface in light theme showing compression controls" width="960" height="540" loading="lazy" />
+            </picture>
             <span class="hero__screenshot-label" data-i18n="hero.light">Light theme</span>
           </div>
         </div>
