@@ -1,0 +1,17 @@
+{
+  "name": "litely-landing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Litely landing page",
+  "scripts": {
+    "build": "node build.js",
+    "build:css": "node -e \"const c=require('clean-css');const fs=require('fs');fs.writeFileSync('dist/style.css',new c({level:2}).minify(fs.readFileSync('style.css','utf8')).styles)\"",
+    "build:js": "npx terser i18n.js -c -m -o dist/i18n.js",
+    "build:html": "npx html-minifier-terser --input-dir . --output-dir dist --file-ext html --collapse-whitespace --remove-comments --minify-css --minify-js"
+  },
+  "devDependencies": {
+    "clean-css": "^5.3.3",
+    "html-minifier-terser": "^7.2.0",
+    "terser": "^5.37.0"
+  }
+}

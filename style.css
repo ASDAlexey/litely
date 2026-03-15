@@ -16,7 +16,7 @@
   --border-hover: #2a2a3e;
   --text: #eeeef0;
   --text-secondary: #9898b0;
-  --text-muted: #5c5c78;
+  --text-muted: #8888a4;
   --accent: #7c3aed;
   --accent-light: #a78bfa;
   --accent-blue: #3b82f6;
@@ -1097,7 +1097,7 @@ body {
 }
 
 .platform--soon {
-  opacity: 0.5;
+  opacity: 0.7;
 }
 
 .platform__header {
