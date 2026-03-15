@@ -147,6 +147,15 @@ body {
   margin-left: 2px;
 }
 
+.logo__slogan {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-left: 16px;
+  padding-left: 16px;
+  border-left: 1px solid var(--border);
+}
+
 .nav {
   display: flex;
   align-items: center;
@@ -1231,6 +1240,10 @@ body {
 
 /* ═══ Responsive ═══ */
 @media (max-width: 900px) {
+  .logo__slogan {
+    display: none;
+  }
+
   .split {
     grid-template-columns: 1fr;
     gap: 48px;

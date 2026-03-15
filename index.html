@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Litely — automatic desktop app for batch compression of videos and images. Watch folders, H.265, AV1, WebP, AVIF. Free, native, cross-platform." />
+    <meta name="description" content="Litely — make your media lighter. Automatic desktop app for batch compression of videos and images. Watch folders, H.265, AV1, WebP, AVIF. Native, cross-platform." />
     <meta property="og:title" content="Litely — Automatic Media Compression" />
-    <meta property="og:description" content="Add a folder — Litely compresses every new video and image automatically. Built on Tauri + Rust." />
+    <meta property="og:description" content="Add a folder — Litely compresses every new video and image automatically. Native app, minimal memory, maximum speed." />
     <meta property="og:type" content="website" />
     <meta name="theme-color" content="#0a0a0f" />
     <title>Litely — Automatic Media Compression</title>
@@ -40,6 +40,7 @@
           Litely
           <span class="logo__version">0.7.0</span>
         </a>
+        <span class="logo__slogan" data-i18n="header.slogan">make your media lighter</span>
         <nav class="nav" aria-label="Main navigation">
           <a href="#features" class="nav__link" data-i18n="nav.features">Features</a>
           <a href="#usecases" class="nav__link" data-i18n="nav.usecases">Use Cases</a>
@@ -59,10 +60,10 @@
         <div class="hero__actions">
           <a href="#download" class="btn btn--primary btn--lg" id="primaryDownload">
             <svg class="btn__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span data-i18n="hero.cta">Download for Free</span>
+            <span data-i18n="hero.cta">Download</span>
           </a>
         </div>
-        <p class="hero__hint" id="heroHint" data-i18n="hero.hint">macOS 11+ &middot; Free &middot; Native app</p>
+        <p class="hero__hint" id="heroHint" data-i18n="hero.hint">macOS 11+ &middot; Native app</p>
 
         <!-- Compression Demo -->
         <div class="demo" data-reveal="scale">
@@ -136,8 +137,8 @@
             <span class="stats__label" data-i18n="stats.formats">video formats</span>
           </div>
           <div class="stats__item">
-            <span class="stats__value" data-text="Free">Free</span>
-            <span class="stats__label" data-i18n="stats.free">forever</span>
+            <span class="stats__value" data-text="< 40">&lt; 40</span>
+            <span class="stats__label" data-i18n="stats.memory">MB memory</span>
           </div>
         </div>
       </div>
@@ -385,19 +386,12 @@
           <div class="split__text" data-reveal>
             <span class="label" data-i18n="perf.label">Native Performance</span>
             <h2 class="section__title" data-i18n="perf.title">Not Electron. Not Slow.</h2>
-            <p class="section__desc" data-i18n="perf.desc">Built on Tauri 2 + Rust for minimal memory footprint and maximum speed.</p>
-            <div class="tech-tags">
-              <span class="tech-tag">Tauri 2</span>
-              <span class="tech-tag">Rust</span>
-              <span class="tech-tag">FFmpeg 6.1.1</span>
-              <span class="tech-tag">VideoToolbox</span>
-              <span class="tech-tag">Angular 21</span>
-            </div>
+            <p class="section__desc" data-i18n="perf.desc">Native app with minimal memory footprint and maximum speed. No browser engine under the hood.</p>
             <ul class="checklist">
               <li data-i18n="perf.f1">Native binary — not a browser in disguise</li>
-              <li data-i18n="perf.f2">Swift VideoToolbox module for hardware acceleration</li>
-              <li data-i18n="perf.f3">Virtual scrolling — smooth with thousands of files</li>
-              <li data-i18n="perf.f4">Zoneless Angular — instant UI response</li>
+              <li data-i18n="perf.f2">Hardware-accelerated GPU encoding</li>
+              <li data-i18n="perf.f3">Smooth UI even with thousands of files</li>
+              <li data-i18n="perf.f4">Instant interface response, zero lag</li>
             </ul>
           </div>
           <div class="split__visual" data-reveal="right">
@@ -470,7 +464,7 @@
       <div class="container">
         <div class="section__header" data-reveal>
           <h2 class="section__title section__title--lg" data-i18n="dl.title">Download Litely</h2>
-          <p class="section__desc" data-i18n="dl.desc">Free to use. Choose your platform.</p>
+          <p class="section__desc" data-i18n="dl.desc">Free during Early Access. Choose your platform.</p>
         </div>
         <div class="platforms" data-reveal>
           <div class="platform" id="platform-mac">

@@ -1,20 +1,21 @@
-var translations = {
+const translations = {
   en: {
+    'header.slogan': 'make your media lighter',
     'nav.features': 'Features',
     'nav.usecases': 'Use Cases',
     'nav.download': 'Download',
     'hero.title': 'Compress Everything.<br>Automatically.',
     'hero.subtitle':
       'Add a folder — Litely watches for new files and compresses them in the background. Videos, images, zero effort.',
-    'hero.cta': 'Download for Free',
-    'hero.hint': 'macOS 11+ · Free · Native app',
+    'hero.cta': 'Download',
+    'hero.hint': 'macOS 11+ · Native app',
     'hero.dark': 'Dark theme',
     'hero.light': 'Light theme',
     'demo.status': '3 files compressed · 3.1 GB saved',
     'stats.video': 'video compression',
     'stats.image': 'image compression',
     'stats.formats': 'video formats',
-    'stats.free': 'forever',
+    'stats.memory': 'MB memory',
     'watch.label': 'Smart Automation',
     'watch.title': 'Set It and Forget It',
     'watch.desc':
@@ -87,11 +88,11 @@ var translations = {
     'int.c6d': 'Both themes supported — switch to match your preference.',
     'perf.label': 'Native Performance',
     'perf.title': 'Not Electron. Not Slow.',
-    'perf.desc': 'Built on Tauri 2 + Rust for minimal memory footprint and maximum speed.',
+    'perf.desc': 'Native app with minimal memory footprint and maximum speed. No browser engine under the hood.',
     'perf.f1': 'Native binary — not a browser in disguise',
-    'perf.f2': 'Swift VideoToolbox module for hardware acceleration',
-    'perf.f3': 'Virtual scrolling — smooth with thousands of files',
-    'perf.f4': 'Zoneless Angular — instant UI response',
+    'perf.f2': 'Hardware-accelerated GPU encoding',
+    'perf.f3': 'Smooth UI even with thousands of files',
+    'perf.f4': 'Instant interface response, zero lag',
     'perf.electron': 'Typical Electron app',
     'perf.caption': 'Memory usage at idle',
     'uc.label': "Who It's For",
@@ -109,7 +110,7 @@ var translations = {
     'uc.c6t': 'Everyone Else',
     'uc.c6d': 'Free up gigabytes of disk space without losing quality.',
     'dl.title': 'Download Litely',
-    'dl.desc': 'Free to use. Choose your platform.',
+    'dl.desc': 'Free during Early Access. Choose your platform.',
     'dl.coming': 'Coming soon',
     'dl.all': 'All releases on GitHub →',
     'dl.your_os': 'your system',
@@ -118,21 +119,22 @@ var translations = {
     'dl.auto.linux': 'Download for Linux',
   },
   ru: {
+    'header.slogan': 'сделай медиа легче',
     'nav.features': 'Возможности',
     'nav.usecases': 'Сценарии',
     'nav.download': 'Скачать',
     'hero.title': 'Сжимай всё.<br>Автоматически.',
     'hero.subtitle':
       'Добавь папку — Litely следит за новыми файлами и сжимает их в фоне. Видео, изображения, без усилий.',
-    'hero.cta': 'Скачать бесплатно',
-    'hero.hint': 'macOS 11+ · Бесплатно · Нативное приложение',
+    'hero.cta': 'Скачать',
+    'hero.hint': 'macOS 11+ · Нативное приложение',
     'hero.dark': 'Тёмная тема',
     'hero.light': 'Светлая тема',
     'demo.status': '3 файла сжато · 3.1 ГБ сэкономлено',
     'stats.video': 'сжатие видео',
     'stats.image': 'сжатие изображений',
     'stats.formats': 'форматов видео',
-    'stats.free': 'навсегда',
+    'stats.memory': 'МБ памяти',
     'watch.label': 'Умная автоматизация',
     'watch.title': 'Настрой и забудь',
     'watch.desc':
@@ -205,11 +207,11 @@ var translations = {
     'int.c6d': 'Обе темы — переключайся под настроение.',
     'perf.label': 'Нативная скорость',
     'perf.title': 'Не Electron. Не тормозит.',
-    'perf.desc': 'Построен на Tauri 2 + Rust — минимум памяти, максимум скорости.',
+    'perf.desc': 'Нативное приложение с минимальным потреблением памяти и максимальной скоростью. Никакого браузера под капотом.',
     'perf.f1': 'Нативный бинарник — не браузер под маской',
-    'perf.f2': 'Swift-модуль VideoToolbox для аппаратного ускорения',
-    'perf.f3': 'Виртуальный скроллинг — плавно с тысячами файлов',
-    'perf.f4': 'Zoneless Angular — мгновенный отклик интерфейса',
+    'perf.f2': 'Аппаратное ускорение GPU-кодирования',
+    'perf.f3': 'Плавный интерфейс даже с тысячами файлов',
+    'perf.f4': 'Мгновенный отклик интерфейса, ноль задержек',
     'perf.electron': 'Типичное Electron-приложение',
     'perf.caption': 'Потребление памяти в простое',
     'uc.label': 'Для кого',
@@ -227,7 +229,7 @@ var translations = {
     'uc.c6t': 'Все остальные',
     'uc.c6d': 'Освободи гигабайты дискового пространства без потери качества.',
     'dl.title': 'Скачать Litely',
-    'dl.desc': 'Бесплатно. Выберите платформу.',
+    'dl.desc': 'Бесплатно на старте. Выберите платформу.',
     'dl.coming': 'Скоро',
     'dl.all': 'Все версии на GitHub →',
     'dl.your_os': 'ваша система',
@@ -239,7 +241,7 @@ var translations = {
 
 /* ═══ OS Detection ═══ */
 function detectOS() {
-  var ua = navigator.userAgent || navigator.platform || '';
+  const ua = navigator.userAgent || navigator.platform || '';
   if (/Mac/i.test(ua)) return 'mac';
   if (/Win/i.test(ua)) return 'windows';
   if (/Linux/i.test(ua)) return 'linux';
@@ -247,15 +249,15 @@ function detectOS() {
 }
 
 function setupOSDetection() {
-  var os = detectOS();
-  var lang = getLang();
-  var strings = translations[lang];
-  var platformIds = { mac: 'platform-mac', windows: 'platform-windows', linux: 'platform-linux' };
-  var detectIds = { mac: 'detect-mac', windows: 'detect-windows', linux: 'detect-linux' };
+  const os = detectOS();
+  const lang = getLang();
+  const strings = translations[lang];
+  const platformIds = { mac: 'platform-mac', windows: 'platform-windows', linux: 'platform-linux' };
+  const detectIds = { mac: 'detect-mac', windows: 'detect-windows', linux: 'detect-linux' };
 
   Object.keys(platformIds).forEach(function (key) {
-    var el = document.getElementById(platformIds[key]);
-    var detectEl = document.getElementById(detectIds[key]);
+    const el = document.getElementById(platformIds[key]);
+    const detectEl = document.getElementById(detectIds[key]);
     if (!el || !detectEl) return;
     if (key === os) {
       el.classList.add('platform--detected');
@@ -267,8 +269,8 @@ function setupOSDetection() {
     }
   });
 
-  var primaryBtn = document.getElementById('primaryDownload');
-  var btnText = primaryBtn.querySelector('[data-i18n]');
+  const primaryBtn = document.getElementById('primaryDownload');
+  const btnText = primaryBtn.querySelector('[data-i18n]');
   if (os === 'mac') {
     primaryBtn.href =
       'https://github.com/ASDAlexey/litely/releases/latest/download/Litely_aarch64.dmg';
@@ -296,9 +298,9 @@ function setLang(lang) {
 }
 
 function applyLang(lang) {
-  var strings = translations[lang];
+  const strings = translations[lang];
   document.querySelectorAll('[data-i18n]').forEach(function (el) {
-    var key = el.getAttribute('data-i18n');
+    const key = el.getAttribute('data-i18n');
     if (strings[key]) {
       el.innerHTML = strings[key];
     }
@@ -309,7 +311,7 @@ function applyLang(lang) {
       ? 'Litely \u2014 \u0410\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u0441\u0436\u0430\u0442\u0438\u0435 \u043c\u0435\u0434\u0438\u0430'
       : 'Litely \u2014 Automatic Media Compression';
 
-  var toggle = document.getElementById('langToggle');
+  const toggle = document.getElementById('langToggle');
   toggle.textContent = lang === 'ru' ? 'EN' : 'RU';
 
   setupOSDetection();
@@ -317,7 +319,7 @@ function applyLang(lang) {
 
 /* ═══ Scroll Reveal ═══ */
 function initScrollReveal() {
-  var observer = new IntersectionObserver(
+  const observer = new IntersectionObserver(
     function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
@@ -336,11 +338,11 @@ function initScrollReveal() {
 
 /* ═══ Counter Animation ═══ */
 function initCounters() {
-  var observer = new IntersectionObserver(
+  const observer = new IntersectionObserver(
     function (entries) {
       entries.forEach(function (entry) {
         if (!entry.isIntersecting) return;
-        var el = entry.target;
+        const el = entry.target;
         observer.unobserve(el);
 
         if (el.dataset.text) {
@@ -348,17 +350,17 @@ function initCounters() {
           return;
         }
 
-        var target = parseInt(el.dataset.counter, 10);
-        var suffix = el.dataset.suffix || '';
-        var duration = 1800;
-        var start = performance.now();
+        const target = parseInt(el.dataset.counter, 10);
+        const suffix = el.dataset.suffix || '';
+        const duration = 1800;
+        const start = performance.now();
 
         function tick(now) {
-          var elapsed = now - start;
-          var progress = Math.min(elapsed / duration, 1);
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
           // ease-out cubic
-          var eased = 1 - Math.pow(1 - progress, 3);
-          var current = Math.round(eased * target);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.round(eased * target);
           el.textContent = current + suffix;
           if (progress < 1) {
             requestAnimationFrame(tick);
@@ -380,9 +382,9 @@ function initCounters() {
 function initSmoothScroll() {
   document.querySelectorAll('a[href^="#"]').forEach(function (link) {
     link.addEventListener('click', function (e) {
-      var href = this.getAttribute('href');
+      const href = this.getAttribute('href');
       if (href === '#') return;
-      var target = document.querySelector(href);
+      const target = document.querySelector(href);
       if (target) {
         e.preventDefault();
         target.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -393,7 +395,7 @@ function initSmoothScroll() {
 
 /* ═══ Init ═══ */
 document.getElementById('langToggle').addEventListener('click', function () {
-  var current = getLang();
+  const current = getLang();
   setLang(current === 'ru' ? 'en' : 'ru');
 });
 
