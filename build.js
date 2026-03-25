@@ -37,6 +37,21 @@ async function build() {
   fs.writeFileSync(path.join(DIST, 'index.html'), minHTML);
   console.log(`HTML: ${html.length} → ${minHTML.length} (${Math.round((1 - minHTML.length / html.length) * 100)}%)`);
 
+  // Copy auth callback
+  const authDir = path.join(DIST, 'auth');
+  fs.mkdirSync(authDir, { recursive: true });
+  const authHTML = fs.readFileSync(path.join(__dirname, 'auth', 'callback.html'), 'utf8');
+  const minAuthHTML = await minifyHTML(authHTML, {
+    collapseWhitespace: true,
+    removeComments: true,
+    removeRedundantAttributes: true,
+    removeEmptyAttributes: true,
+    minifyCSS: true,
+    minifyJS: true,
+  });
+  fs.writeFileSync(path.join(authDir, 'callback.html'), minAuthHTML);
+  console.log(`Auth: ${authHTML.length} → ${minAuthHTML.length} (${Math.round((1 - minAuthHTML.length / authHTML.length) * 100)}%)`);
+
   // Copy images
   const imagesDir = path.join(__dirname, 'images');
   const distImages = path.join(DIST, 'images');
