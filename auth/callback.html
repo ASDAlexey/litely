@@ -47,13 +47,30 @@
     var params = new URLSearchParams(window.location.search);
     var code = params.get('code');
     var error = params.get('error');
+    var port = params.get('state');
 
     if (code) {
-      window.location.href = 'litely://auth?code=' + encodeURIComponent(code);
       document.getElementById('msg').textContent = t.success;
+
+      // Send code to localhost TCP server (dev fallback, fires before page navigates)
+      if (port) {
+        new Image().src = 'http://127.0.0.1:' + port + '/?code=' + encodeURIComponent(code);
+      }
+
+      // Try deep link after short delay (production, installed .app)
+      setTimeout(function() {
+        window.location.href = 'litely://auth?code=' + encodeURIComponent(code);
+      }, 300);
     } else if (error) {
-      window.location.href = 'litely://auth?error=' + encodeURIComponent(error);
       document.getElementById('msg').textContent = t.error;
+
+      if (port) {
+        new Image().src = 'http://127.0.0.1:' + port + '/?error=' + encodeURIComponent(error);
+      }
+
+      setTimeout(function() {
+        window.location.href = 'litely://auth?error=' + encodeURIComponent(error);
+      }, 300);
     } else {
       document.getElementById('msg').textContent = t.missing;
     }
