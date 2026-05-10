@@ -560,6 +560,13 @@ body {
   font-size: clamp(2rem, 4vw, 2.8rem);
 }
 
+.section__title--xl {
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .section__desc {
   font-size: 1rem;
   color: var(--text-secondary);
@@ -909,6 +916,170 @@ body {
   font-weight: 700;
 }
 
+/* ═══ Jira Hero Section ═══ */
+.section--jira {
+  position: relative;
+  overflow: hidden;
+}
+
+.section--jira::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 900px;
+  height: 900px;
+  background: radial-gradient(circle, var(--accent-glow) 0%, transparent 65%);
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.jira-hero__badges {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.jira-hero__badges .label {
+  margin-bottom: 0;
+}
+
+.label--unique {
+  color: #34d399;
+  background: rgba(52, 211, 153, 0.1);
+  border-color: rgba(52, 211, 153, 0.2);
+}
+
+.section--jira .section__desc {
+  max-width: 660px;
+}
+
+/* ═══ Jira Timeline ═══ */
+.jira-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin-top: 56px;
+  position: relative;
+}
+
+.jira-timeline::before {
+  content: '';
+  position: absolute;
+  top: 20px;
+  left: calc(12.5% + 20px);
+  right: calc(12.5% + 20px);
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-blue));
+  opacity: 0.3;
+}
+
+.jira-timeline__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+}
+
+.jira-timeline__marker {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  color: var(--accent-light);
+  font-size: 0.9rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+  transition: background 0.3s, border-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+.jira-timeline__step:hover .jira-timeline__marker {
+  background: linear-gradient(135deg, var(--accent), var(--accent-blue));
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 0 20px var(--accent-glow);
+}
+
+.jira-timeline__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 20px;
+  margin-bottom: 8px;
+}
+
+.jira-timeline__desc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.jira-timeline__desc kbd {
+  display: inline-block;
+  padding: 1px 6px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 0.85em;
+  color: var(--text);
+}
+
+.jira-timeline__desc code {
+  color: var(--accent-light);
+  font-size: 0.9em;
+}
+
+/* ═══ Jira Feature Chips ═══ */
+.jira-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.jira-chip {
+  display: inline-block;
+  padding: 6px 16px;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  background: var(--surface);
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.jira-chip:hover {
+  border-color: var(--border-hover);
+  color: var(--text);
+}
+
+/* ═══ Jira Demo Screenshot ═══ */
+.jira-demo {
+  margin-top: 56px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4), 0 0 30px var(--accent-glow);
+}
+
+.jira-demo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 /* ═══ Jira Flow Visual ═══ */
 .jira-flow {
   display: flex;
@@ -1141,6 +1312,20 @@ body {
 .jira-visual__toggle--on::after {
   transform: translateX(18px);
   background: #fff;
+}
+
+/* legacy demo — kept for compatibility */
+.jira-flow__demo {
+  margin-top: 20px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.jira-flow__demo img {
+  display: block;
+  width: 100%;
+  height: auto;
 }
 
 /* ═══ Cards ═══ */
@@ -1460,6 +1645,15 @@ body {
     gap: 48px;
   }
 
+  .jira-timeline {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .jira-timeline::before {
+    display: none;
+  }
+
   .split--reverse {
     direction: ltr;
   }
@@ -1484,6 +1678,11 @@ body {
 }
 
 @media (max-width: 640px) {
+  .jira-timeline {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
   .hero {
     padding: 40px 0 60px;
   }
