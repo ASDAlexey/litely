@@ -909,83 +909,144 @@ body {
   font-weight: 700;
 }
 
-/* ═══ Jira Visual ═══ */
-.jira-visual {
+/* ═══ Jira Flow Visual ═══ */
+.jira-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  padding: 28px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow: hidden;
 }
 
-.jira-visual__header {
-  padding: 14px 20px;
-  border-bottom: 1px solid var(--border);
-}
-
-.jira-visual__title {
-  font-size: 0.7rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-}
-
-.jira-visual__body {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.jira-visual__row {
+.jira-flow__step {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 14px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.jira-visual__row-label {
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--text);
+.jira-flow__step:hover {
+  border-color: var(--border-hover);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.jira-visual__toggle {
-  width: 44px;
-  height: 24px;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.1);
-  position: relative;
+.jira-flow__step--success {
+  border-color: rgba(16, 185, 129, 0.25);
+  background: rgba(16, 185, 129, 0.04);
+}
+
+.jira-flow__step-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   flex-shrink: 0;
 }
 
-.jira-visual__toggle::after {
-  content: '';
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  background: var(--text-muted);
-  transition: transform 0.2s, background 0.2s;
+.jira-flow__step-icon--purple {
+  background: var(--accent-glow);
+  color: var(--accent-light);
 }
 
-.jira-visual__toggle--on {
-  background: var(--accent-blue);
+.jira-flow__step-icon--blue {
+  background: rgba(59, 130, 246, 0.12);
+  color: var(--accent-blue);
 }
 
-.jira-visual__toggle--on::after {
-  transform: translateX(20px);
-  background: #fff;
+.jira-flow__step-icon--green {
+  background: var(--green-glow);
+  color: var(--green);
 }
 
-.jira-visual__accounts-header {
+.jira-flow__step-content {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.jira-flow__step-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.jira-flow__step-detail {
+  font-size: 0.8rem;
+  color: var(--text-muted);
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
-.jira-visual__accounts-label {
+.jira-flow__badge {
+  color: var(--green);
+  background: var(--green-glow);
+  border: 1px solid rgba(16, 185, 129, 0.2);
+  border-radius: var(--radius-xs);
+  padding: 1px 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.jira-flow__step-url {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-family: 'SF Mono', 'Fira Code', monospace;
+}
+
+.jira-flow__step-url strong {
+  color: var(--accent-light);
+  font-weight: 700;
+}
+
+.jira-flow__step-markup {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.jira-flow__step-markup code {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.75rem;
+  color: var(--green);
+  background: var(--green-glow);
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+}
+
+.jira-flow__connector {
+  display: flex;
+  justify-content: center;
+  padding: 4px 0;
+  color: var(--text-muted);
+}
+
+.jira-flow__accounts {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.jira-flow__accounts-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.jira-flow__accounts-label {
   font-size: 0.65rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -993,7 +1054,7 @@ body {
   color: var(--text-muted);
 }
 
-.jira-visual__accounts-count {
+.jira-flow__accounts-count {
   font-size: 0.65rem;
   font-weight: 700;
   color: var(--text-muted);
@@ -1002,29 +1063,24 @@ body {
   border-radius: 10px;
 }
 
-.jira-visual__account {
+.jira-flow__account {
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 14px 16px;
+  padding: 10px 14px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  transition: border-color 0.3s;
-}
-
-.jira-visual__account:hover {
-  border-color: var(--border-hover);
 }
 
 .jira-visual__avatar {
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 800;
   color: #fff;
   flex-shrink: 0;
@@ -1047,48 +1103,44 @@ body {
 }
 
 .jira-visual__account-name {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   font-weight: 600;
   color: var(--text);
 }
 
 .jira-visual__account-url {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--text-muted);
 }
 
-.jira-visual__add {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--text-muted);
-  text-align: center;
-  padding: 12px;
-  border: 1px dashed var(--border);
-  border-radius: var(--radius-sm);
-  cursor: default;
-  transition: border-color 0.2s, color 0.2s;
+.jira-visual__toggle {
+  width: 40px;
+  height: 22px;
+  border-radius: 11px;
+  background: rgba(255, 255, 255, 0.1);
+  position: relative;
+  flex-shrink: 0;
 }
 
-.jira-visual__add:hover {
-  border-color: var(--accent);
-  color: var(--accent-light);
-}
-
-.jira-visual__status {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--green);
-}
-
-.jira-visual__status-dot {
-  width: 8px;
-  height: 8px;
+.jira-visual__toggle::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  background: var(--green);
-  animation: pulse-dot 2s ease-in-out infinite;
+  background: var(--text-muted);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.jira-visual__toggle--on {
+  background: var(--accent-blue);
+}
+
+.jira-visual__toggle--on::after {
+  transform: translateX(18px);
+  background: #fff;
 }
 
 /* ═══ Cards ═══ */
