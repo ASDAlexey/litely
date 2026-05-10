@@ -41,7 +41,7 @@
             <svg width="20" height="20" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient gradientUnits="userSpaceOnUse" id="feather" x1="20" x2="60" y1="10" y2="70"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#3b82f6"/></linearGradient></defs><rect fill="#0a1628" height="80" rx="18" width="80"/><path d="M54 18C54 18 22 36 24 56C24 56 30 46 38 42C32 48 28 56 28 56C28 56 58 38 54 18Z" fill="url(#feather)" opacity="0.9"/><path d="M38 42C30 46 26 54 26 56C26 56 42 32 54 18" fill="none" opacity="0.5" stroke="white" stroke-width="1.5"/><line opacity="0.6" stroke="#a78bfa" stroke-linecap="round" stroke-width="1.5" x1="24" x2="20" y1="56" y2="64"/><circle cx="58" cy="16" fill="#c4b5fd" opacity="0.7" r="1.2"/><circle cx="62" cy="24" fill="#a78bfa" opacity="0.5" r="0.8"/></svg>
           </span>
           Litely
-          <span class="logo__version">0.12.0</span>
+          <span class="logo__version">0.15.3</span>
         </a>
         <span class="logo__slogan" data-i18n="header.slogan">make your media lighter</span>
         <nav class="nav" aria-label="Main navigation">
@@ -162,9 +162,9 @@
           <div class="split__text" data-reveal>
             <span class="label" data-i18n="watch.label">Smart Automation</span>
             <h2 class="section__title" data-i18n="watch.title">Set It and Forget It</h2>
-            <p class="section__desc" data-i18n="watch.desc">Add up to 5 folders — Litely watches them around the clock and compresses every new file automatically.</p>
+            <p class="section__desc" data-i18n="watch.desc">Add up to 3 folders — Litely watches them around the clock and compresses every new file automatically.</p>
             <ul class="checklist" role="list">
-              <li data-i18n="watch.f1">Watch up to 5 folders simultaneously</li>
+              <li data-i18n="watch.f1">Watch up to 3 folders simultaneously</li>
               <li data-i18n="watch.f2">Real-time detection of new files</li>
               <li data-i18n="watch.f3">Settings persist between restarts</li>
               <li data-i18n="watch.f4">Smart filtering — skips hidden, compressed, and output files</li>
@@ -390,8 +390,65 @@
       </div>
     </section>
 
+    <!-- Jira Integration -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="split split--reverse">
+          <div class="split__text" data-reveal>
+            <span class="label" data-i18n="jira.label">Jira Integration</span>
+            <h2 class="section__title" data-i18n="jira.title">Compress. Upload. Done.</h2>
+            <p class="section__desc" data-i18n="jira.desc">Litely detects which Jira task you have open in the browser and uploads compressed files as attachments — automatically.</p>
+            <ul class="checklist" role="list">
+              <li data-i18n="jira.f1">Auto-upload compressed files to Jira tasks</li>
+              <li data-i18n="jira.f2">Connect multiple Jira instances</li>
+              <li data-i18n="jira.f3">Smart browser detection — finds active Jira task</li>
+              <li data-i18n="jira.f4">Generates Jira markup and copies to clipboard</li>
+            </ul>
+          </div>
+          <div class="split__visual" data-reveal="left">
+            <div class="jira-visual">
+              <div class="jira-visual__header">
+                <span class="jira-visual__title">JIRA</span>
+              </div>
+              <div class="jira-visual__body">
+                <div class="jira-visual__row">
+                  <span class="jira-visual__row-label" data-i18n="jira.autoupload">Auto-upload</span>
+                  <div class="jira-visual__toggle jira-visual__toggle--on" role="img" aria-label="Enabled"></div>
+                </div>
+                <div class="jira-visual__accounts-header">
+                  <span class="jira-visual__accounts-label" data-i18n="jira.accounts">ACCOUNTS</span>
+                  <span class="jira-visual__accounts-count">2</span>
+                </div>
+                <div class="jira-visual__account" style="--delay: 0">
+                  <div class="jira-visual__avatar jira-visual__avatar--purple">DT</div>
+                  <div class="jira-visual__account-info">
+                    <span class="jira-visual__account-name">Design Team</span>
+                    <span class="jira-visual__account-url">jira.company.com</span>
+                  </div>
+                  <div class="jira-visual__toggle jira-visual__toggle--on" role="img" aria-label="Enabled"></div>
+                </div>
+                <div class="jira-visual__account" style="--delay: 1">
+                  <div class="jira-visual__avatar jira-visual__avatar--blue">BT</div>
+                  <div class="jira-visual__account-info">
+                    <span class="jira-visual__account-name">Backend Team</span>
+                    <span class="jira-visual__account-url">jira.dev.com</span>
+                  </div>
+                  <div class="jira-visual__toggle jira-visual__toggle--on" role="img" aria-label="Enabled"></div>
+                </div>
+                <div class="jira-visual__add" data-i18n="jira.add">+ Add Jira</div>
+                <div class="jira-visual__status">
+                  <span class="jira-visual__status-dot"></span>
+                  <span data-i18n="jira.connected">Connected</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- Performance -->
-    <section class="section section--alt" id="performance">
+    <section class="section" id="performance">
       <div class="container">
         <div class="split">
           <div class="split__text" data-reveal>
@@ -418,7 +475,7 @@
     </section>
 
     <!-- Use Cases -->
-    <section class="section" id="usecases">
+    <section class="section section--alt" id="usecases">
       <div class="container">
         <div class="section__header" data-reveal>
           <span class="label" data-i18n="uc.label">Who It's For</span>

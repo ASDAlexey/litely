@@ -909,6 +909,188 @@ body {
   font-weight: 700;
 }
 
+/* ═══ Jira Visual ═══ */
+.jira-visual {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.jira-visual__header {
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.jira-visual__title {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.jira-visual__body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.jira-visual__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jira-visual__row-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.jira-visual__toggle {
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  position: relative;
+  flex-shrink: 0;
+}
+
+.jira-visual__toggle::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.jira-visual__toggle--on {
+  background: var(--accent-blue);
+}
+
+.jira-visual__toggle--on::after {
+  transform: translateX(20px);
+  background: #fff;
+}
+
+.jira-visual__accounts-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.jira-visual__accounts-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.jira-visual__accounts-count {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 1px 7px;
+  border-radius: 10px;
+}
+
+.jira-visual__account {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  transition: border-color 0.3s;
+}
+
+.jira-visual__account:hover {
+  border-color: var(--border-hover);
+}
+
+.jira-visual__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+.jira-visual__avatar--purple {
+  background: linear-gradient(135deg, #7c3aed, #6d28d9);
+}
+
+.jira-visual__avatar--blue {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.jira-visual__account-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  flex: 1;
+}
+
+.jira-visual__account-name {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.jira-visual__account-url {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.jira-visual__add {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-align: center;
+  padding: 12px;
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+  cursor: default;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.jira-visual__add:hover {
+  border-color: var(--accent);
+  color: var(--accent-light);
+}
+
+.jira-visual__status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--green);
+}
+
+.jira-visual__status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
 /* ═══ Cards ═══ */
 .card-grid {
   display: grid;
