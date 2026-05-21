@@ -14,7 +14,7 @@
 (автоматическое сжатие видео и изображений с отслеживанием папок).
 
 ## Контекст продукта
-- Litely — нативное десктопное приложение для macOS (Windows/Linux — скоро)
+- Litely — нативное десктопное приложение для macOS, Windows и Linux
 - Автоматическое сжатие: пользователь добавляет папки, приложение сжимает новые файлы
 - Видео: H.264, H.265/HEVC, AV1 кодеки; GPU-ускорение; двухпроходное кодирование;
   форматы MP4, MKV, WebM, MOV, AVI, FLV, GIF; resize; target size; извлечение аудио
@@ -67,7 +67,7 @@ B) Server-side language detection + отдельные URL
 
 ### 5. Schema.org (JSON-LD) — расширить
 Дополнить существующий SoftwareApplication:
-- softwareVersion: "0.7.0"
+- softwareVersion: "0.15.8"
 - downloadUrl (для macOS)
 - screenshot (URLs скриншотов)
 - author → Organization или Person
@@ -156,7 +156,32 @@ B) Server-side language detection + отдельные URL
 
 ---
 
+## Структура сайта (все страницы)
+
+```
+/
+├── index.html              ← EN лендинг (основная страница)
+├── privacy.html            ← EN политика конфиденциальности
+├── robots.txt              ← TODO: создать
+├── sitemap.xml             ← TODO: создать
+├── style.css
+├── i18n.js
+├── images/
+│   ├── og-image.png        ← TODO: создать (1200x630)
+│   └── ...
+├── ru/
+│   ├── index.html          ← TODO: RU лендинг (статический)
+│   └── privacy.html        ← TODO: RU политика конфиденциальности (статический)
+├── auth/
+│   └── callback.html       ← OAuth callback (техническая, noindex)
+└── docs/                   ← build output
+```
+
+---
+
 ## Текущие проблемы (аудит)
+
+### index.html
 
 | Проблема | Приоритет | Статус |
 |----------|-----------|--------|
@@ -167,13 +192,67 @@ B) Server-side language detection + отдельные URL
 | Нет Twitter Card мета-тегов | High | Не исправлено |
 | Нет `robots.txt` и `sitemap.xml` | High | Не исправлено |
 | Нет `<meta name="keywords">` (Yandex) | High | Не исправлено |
-| Schema.org минимальный | High | Не исправлено |
+| Schema.org минимальный (нет `aggregateRating` — Google не покажет rich result) | High | Не исправлено |
 | H2 без ключевых слов | Medium | Не исправлено |
-| Нет FAQ секции | Medium | Не исправлено |
+| Нет FAQ секции (упущенные Featured Snippets Google + Yandex) | Medium | Не исправлено |
 | `alt` тексты изображений слабые | Medium | Не исправлено |
-| Нет preload для шрифтов | Low | Не исправлено |
-| CSS: опечатка `нг` в style.css:19 | Low | Не исправлено |
+| Контраст `--text-muted` не проходит WCAG AA (3.5:1) | Medium | Не исправлено |
+| Нет `:focus` стилей (accessibility) | Medium | Не исправлено |
+| ~250 строк неиспользуемого CSS (`.jira-flow*`) | Medium | Не исправлено |
+| Внешние ссылки без `rel="noopener noreferrer"` | Medium | Не исправлено |
+| Кнопка языка < 44px touch target | Medium | Не исправлено |
 | Footer copyright 2025 вместо 2026 | Low | Не исправлено |
+
+### privacy.html
+
+| Проблема | Приоритет | Статус |
+|----------|-----------|--------|
+| `<meta name="robots" content="noindex">` — страница исключена из индекса (а должна быть E-E-A-T trust signal) | Critical | Не исправлено |
+| RU-контент через inline JS — не виден ботам Yandex | Critical | Не исправлено |
+| Нет отдельного `ru/privacy.html` | Critical | Не исправлено |
+| Нет `canonical` URL | High | Не исправлено |
+| Нет `hreflang` тегов | High | Не исправлено |
+| Нет OG мета-тегов | Medium | Не исправлено |
+| Нет Schema.org (WebPage) | Medium | Не исправлено |
+| Нет `<meta name="keywords">` | Medium | Не исправлено |
+| Copyright 2025 | Low | Не исправлено |
+| Версия на privacy.html отстаёт (0.15.3, актуальная 0.15.8) | Low | Не исправлено |
+| Незакрытый `<p>` в footer | Low | Не исправлено |
+| Переключатель языка через JS DOM-замену вместо URL | High | Не исправлено |
+
+### auth/callback.html
+
+| Проблема | Приоритет | Статус |
+|----------|-----------|--------|
+| Нет `<meta name="robots" content="noindex, nofollow">` | Low | Не исправлено |
+| Нет `Disallow: /auth/` в robots.txt (robots.txt не существует) | High | Не исправлено |
+| Не нуждается в отдельной RU-версии (техническая страница, i18n через auto-detect) | — | OK |
+
+---
+
+## SEO-ценность privacy.html
+
+Privacy Policy Litely **уникально сильная** для SEO:
+
+1. **E-E-A-T Trust signal**: Google и Yandex расценивают Privacy Policy как признак серьёзного проекта
+2. **Yandex ИКС**: наличие правовых страниц повышает индекс качества сайта
+3. **"No telemetry" как ключевое слово**: пользователи ищут "video compressor no telemetry", "privacy-friendly image compressor" — Litely здесь идеален
+4. **Конкурентное преимущество**: большинство конкурентов (Movavi, WonderShare) собирают данные; Litely — нет
+5. **App Store / каталоги**: при публикации на AlternativeTo, ProductHunt ссылка на Privacy Policy обязательна
+
+**Рекомендация**: не просто разрешить индексацию, но акцентировать "zero telemetry, zero tracking" в description.
+
+---
+
+## auth/callback.html — SEO-обработка
+
+OAuth callback — **техническая страница**, не имеет SEO-ценности.
+
+**Что сделать:**
+1. Добавить `<meta name="robots" content="noindex, nofollow">` в `<head>` (после строки 6)
+2. `robots.txt`: `Disallow: /auth/` (уже запланировано)
+3. **НЕ включать** в sitemap.xml
+4. **НЕ создавать** отдельную RU-версию (auto-detect через `navigator.language` уже работает)
 
 ---
 
@@ -185,26 +264,88 @@ B) Server-side language detection + отдельные URL
 3. Обнови FAQ если релевантно
 4. Обнови `<meta description>` и `<meta keywords>` если фича ключевая
 5. Обнови sitemap.xml (lastmod дату)
+6. Обнови оба языка: EN (index.html) и RU (ru/index.html)
 
 ### При добавлении новой секции на лендинг
 1. Используй семантические теги (`<section>`, `<article>`)
 2. Один `<h1>` на страницу, новые секции — `<h2>` / `<h3>`
 3. Добавь ключевые слова в заголовок секции
-4. Обнови оба языка (HTML и i18n.js)
+4. Обнови оба языковых файла (index.html и ru/index.html)
 5. Проверь `alt` у новых изображений
+6. Обнови FAQ Schema.org если добавились новые вопросы
 
 ### При смене URL / домена
-1. Обнови `canonical`, `og:url`, `hreflang`, `sitemap.xml`
+1. Обнови `canonical`, `og:url`, `hreflang`, `sitemap.xml` **во всех 4 HTML-файлах**
 2. Настрой 301-редиректы со старого домена
+3. Обнови robots.txt (`Host` директиву для Yandex)
 
-### При добавлении новой платформы (Windows/Linux)
-1. Обнови Schema.org `operatingSystem` и `downloadUrl`
-2. Обнови `<meta description>` и keywords
-3. Добавь страницы `/download/windows/`, `/download/linux/` если нужно
-4. Обнови sitemap.xml
+### При обновлении платформ (macOS / Windows / Linux)
+1. Обнови Schema.org `operatingSystem` и `downloadUrl` для новых билдов
+2. Обнови `<meta description>` и keywords **в обоих языках** если изменились требования
+3. Обнови sitemap.xml (lastmod)
+4. Обнови `<meta name="keywords">` если добавились платформо-специфичные ключевые слова
+
+### При обновлении Privacy Policy
+1. Обнови **оба файла**: privacy.html и ru/privacy.html
+2. Обнови дату "Last updated" / "Последнее обновление"
+3. Обнови `lastmod` в sitemap.xml
+4. Если добавились новые сетевые запросы — обнови секцию "Network Connections"
+
+### При обновлении auth/callback
+1. Убедись что `noindex, nofollow` остаётся
+2. Не добавляй страницу в sitemap.xml
+3. i18n через auto-detect `navigator.language` — достаточно
+
+---
+
+## Конкурентный анализ — ключевые выводы
+
+### Прямые конкуренты и их SEO
+| Конкурент | Что у него лучше |
+|-----------|-----------------|
+| **HandBrake** | Бренд, 100k+ GitHub stars, все каталоги |
+| **ImageOptim** | FAQ, прозрачное сравнение с конкурентами |
+| **Movavi** | Отдельные URL `/ru/`, нативные RU-тексты, FAQ, 70M+ пользователей |
+| **TinyPNG** | 22+ вопросов FAQ, лого клиентов (Airbnb, Microsoft) |
+| **Caesium** | 5.9k GitHub stars, AlternativeTo (85 лайков) |
+
+### Голубой океан: Jira-интеграция
+"compress screenshots for jira" / "сжатие скриншотов для jira" — **нулевая конкуренция**.
+Ни один конкурент не имеет Jira-интеграцию. Отдельная страница `/jira/` может быть ТОП-1.
+
+### Обязательные площадки для бэклинков
+| Площадка | Приоритет | Влияние |
+|----------|-----------|---------|
+| AlternativeTo | CRITICAL | Google + Yandex |
+| awesome-mac (104k stars) | HIGH | Google |
+| Product Hunt | HIGH | Google |
+| Habr | HIGH | **Yandex** (ключевой) |
+| VC.ru | HIGH | **Yandex** (ключевой) |
+| 4PDA | MEDIUM | **Yandex** |
+| MacUpdate | MEDIUM | Google |
+
+---
+
+## Yandex-специфика (отдельный чеклист)
+
+- [ ] `<meta name="keywords">` — Yandex реально использует (Google игнорирует)
+- [ ] `Host` директива в robots.txt
+- [ ] Yandex.Метрика с WebVisor (поведенческие факторы — ключевой фактор ранжирования Yandex)
+- [ ] Отдельный `ru/index.html` и `ru/privacy.html` со статическим контентом
+- [ ] Бэклинки с Habr, VC.ru, 4PDA — критичны для Yandex ИКС
+- [ ] Естественность текста (Баден-Баден фильтр при переспаме)
+- [ ] Yandex Webmaster: указать регион сайта (Россия)
+- [ ] `<meta name="yandex-verification" content="...">` после регистрации
 
 ---
 
 ## Запрещено упоминать на лендинге
 - Tauri, Rust, Angular, FFmpeg — используй "native app", "GPU acceleration", "native speed"
 - "Free forever" — только "Free during Early Access"
+
+---
+
+## Полный план реализации
+
+Детальный план с кодом, Schema.org, FAQ-секцией, мета-тегами для всех страниц,
+ключевыми словами и чеклистом — см. **SEO_AUDIT.md**.
