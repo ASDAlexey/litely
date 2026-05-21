@@ -1503,3 +1503,62 @@ Items 1, 2, 3, 4, 7, 8, 9, 10 = ~40 мин работы, FCP улучшится 
 | Покрытие ключевых слов | ~3 | 30+ |
 | "compress screenshots jira" | не ранжируется | ТОП-1 (нулевая конкуренция) |
 | "сжатие видео mac" | не ранжируется | ТОП-10 → ТОП-3 (с бэклинками) |
+
+---
+
+## Контекст продукта
+
+- Litely — нативное десктопное приложение для macOS, Windows и Linux
+- Автоматическое сжатие: пользователь добавляет папки, приложение сжимает новые файлы
+- Видео: H.264, H.265/HEVC, AV1 кодеки; GPU-ускорение; двухпроходное кодирование; форматы MP4, MKV, WebM, MOV, AVI, FLV, GIF; resize; target size; извлечение аудио
+- Изображения: WebP, AVIF, JPEG, PNG выход; вход HEIC/HEIF, BMP, TIFF; quality slider; EXIF strip; max effort; target size; batch resize; before/after
+- Нативное приложение ~40 МБ памяти (не Electron)
+- Бесплатно во время Early Access (не бесплатно навсегда)
+- URL: https://asdalexey.github.io/litely/
+- GitHub: https://github.com/ASDAlexey/litely
+- Версия: 0.15.8
+
+---
+
+## Запрещено упоминать на лендинге
+
+- Tauri, Rust, Angular, FFmpeg — только "native app", "GPU acceleration", "native speed"
+- "Free forever" — только "Free during Early Access"
+
+---
+
+## Как использовать при обновлениях
+
+### При добавлении новой фичи
+1. Добавь фичу в `featureList` Schema.org
+2. Обнови FAQ если релевантно
+3. Обнови `<meta description>` и `<meta keywords>` если фича ключевая
+4. Обнови sitemap.xml (lastmod дату)
+5. Обнови оба языка: EN (index.html) и RU (ru/index.html)
+
+### При добавлении новой секции на лендинг
+1. Используй семантические теги (`<section>`, `<article>`)
+2. Один `<h1>` на страницу, новые секции — `<h2>` / `<h3>`
+3. Добавь ключевые слова в заголовок секции
+4. Обнови оба языковых файла (index.html и ru/index.html)
+5. Проверь `alt` у новых изображений
+6. Обнови FAQ Schema.org если добавились новые вопросы
+
+### При смене URL / домена
+1. Обнови `canonical`, `og:url`, `hreflang`, `sitemap.xml` **во всех 4 HTML-файлах**
+2. Настрой 301-редиректы со старого домена
+3. Обнови robots.txt (`Host` директиву для Yandex)
+
+### При обновлении платформ (macOS / Windows / Linux)
+1. Обнови Schema.org `operatingSystem` и `downloadUrl` для новых билдов
+2. Обнови `<meta description>` и keywords **в обоих языках**
+3. Обнови sitemap.xml (lastmod)
+
+### При обновлении Privacy Policy
+1. Обнови **оба файла**: privacy.html и ru/privacy.html
+2. Обнови дату "Last updated" / "Последнее обновление"
+3. Обнови `lastmod` в sitemap.xml
+
+### При обновлении auth/callback
+1. Убедись что `noindex, nofollow` остаётся
+2. Не добавляй страницу в sitemap.xml
