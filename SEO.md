@@ -8,7 +8,7 @@
 
 ## Общая оценка текущего состояния
 
-> **Обновлено: 2026-05-22** — после реализации фаз 1–7, 11–13, 15 (частично), 16 (частично)
+> **Обновлено: 2026-05-22** — после реализации фаз 1–7, 11–16. Версия 0.15.10.
 
 | Параметр | Google | Yandex | Оценка |
 |----------|--------|--------|--------|
@@ -294,7 +294,7 @@ Host: https://asdalexey.github.io/litely/
     "description": "Automatic batch compression of videos, images, and SVG with watch folders, GPU-accelerated encoding, and native performance.",
     "applicationCategory": "MultimediaApplication",
     "operatingSystem": "macOS 11+, Windows 10+, Linux (Ubuntu 22+, Fedora 38+)",
-    "softwareVersion": "0.15.8",
+    "softwareVersion": "0.15.10",
     "fileSize": "7 MB",
     "memoryRequirements": "40 MB",
     "downloadUrl": "https://github.com/ASDAlexey/litely/releases/latest/download/Litely_aarch64.dmg",
@@ -726,7 +726,7 @@ RU-версии:
 | Нет OG/Twitter мета-тегов | — | MEDIUM |
 | Нет Schema.org разметки | — | MEDIUM |
 | Copyright 2025 | 118 | LOW |
-| Версия 0.15.8 (main page = 0.15.8) | 42 | LOW |
+| Версия 0.15.10 (main page = 0.15.10) | 42 | LOW |
 | Нет `<meta name="keywords">` | — | MEDIUM |
 
 ### Почему privacy.html ДОЛЖЕН индексироваться
@@ -878,7 +878,7 @@ document.getElementById('langToggle').addEventListener('click', function() {
 
 #### 11.9 Исправить версию
 
-Убедиться что версия на privacy.html совпадает с актуальной (0.15.8).
+Убедиться что версия на privacy.html совпадает с актуальной (0.15.10).
 
 ---
 
@@ -1360,7 +1360,7 @@ Items 1, 2, 3, 4, 7, 8, 9, 10 = ~40 мин работы, FCP улучшится 
 | `og:url` = `https://asdalexey.github.io/litely/` | index.html:10 | Уже есть, но без canonical — добавить canonical |
 | Schema `"operatingSystem": "macOS, Windows, Linux"` | index.html:28 | Обновить на `"macOS 11+, Windows 10+, Linux"` с деталями |
 | Нет `<figure>` + `<figcaption>` для скриншотов | index.html:117-131 | Обернуть для лучшей семантики |
-| Версия на privacy.html может отставать | privacy.html:42 | Синхронизировать с актуальной (0.15.8) |
+| Версия на privacy.html может отставать | privacy.html:42 | Синхронизировать с актуальной (0.15.10) |
 | `<p>` без закрывающего тега в footer | privacy.html:118 | Добавить `</p>` |
 
 ---
@@ -1434,13 +1434,14 @@ Items 1, 2, 3, 4, 7, 8, 9, 10 = ~40 мин работы, FCP улучшится 
 - [x] Переписать `<title>` с ключевыми словами (EN + RU, index + privacy)
 - [x] Переписать `<meta name="description">` (EN + RU, index + privacy)
 - [x] Переделать переключатель языка: URL-переход вместо JS-замены DOM (index + privacy)
+- [x] Авто-редирект RU-пользователей на `/ru/` (inline script в `<head>`, sessionStorage для ручного выбора)
 - [x] Обновить `build.js` для `ru/`, `ru/privacy.html`, `robots.txt`, `sitemap.xml`
 
 ### HIGH — сразу после CRITICAL
 - [x] **privacy.html**: убрать `noindex` → `index, follow`
 - [x] **privacy.html**: обновить `<head>` (canonical, OG, keywords, Schema.org)
 - [x] Создать `ru/privacy.html` со статическим русским контентом
-- [x] Создать `robots.txt` (с Yandex-директивой `Host`, `Disallow: /auth/`)
+- [x] Создать `robots.txt` (с Yandex-директивой `Host`, `Disallow: /auth/`) — ⚠️ ВРЕМЕННО закрыт `Disallow: /`
 - [x] Создать `sitemap.xml` (4 URL: index EN/RU + privacy EN/RU + hreflang)
 - [ ] Создать OG-картинку `images/og-image.png` (1200x630) — **нужен дизайн-инструмент**
 - [x] Добавить полный набор OG + Twitter Card мета-тегов (index + privacy)
@@ -1485,7 +1486,7 @@ Items 1, 2, 3, 4, 7, 8, 9, 10 = ~40 мин работы, FCP улучшится 
 
 ### LOW — по возможности
 - [x] Исправить copyright 2025 → 2026 (index.html + privacy.html)
-- [x] Синхронизировать версию на privacy.html (0.15.8)
+- [x] Синхронизировать версию на всех страницах (0.15.10)
 - [x] Добавить `<meta name="robots" content="noindex, nofollow">` в auth/callback.html
 - [x] Обернуть скриншоты в `<figure>` + `<figcaption>`
 - [x] Обновить Schema `operatingSystem` на все 3 платформы с деталями
@@ -1526,7 +1527,7 @@ Items 1, 2, 3, 4, 7, 8, 9, 10 = ~40 мин работы, FCP улучшится 
 - Бесплатно во время Early Access (не бесплатно навсегда)
 - URL: https://asdalexey.github.io/litely/
 - GitHub: https://github.com/ASDAlexey/litely
-- Версия: 0.15.8
+- Версия: 0.15.10
 
 ---
 
