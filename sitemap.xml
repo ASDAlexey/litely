@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://asdalexey.github.io/litely/</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asdalexey.github.io/litely/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asdalexey.github.io/litely/ru/" />
+  </url>
+  <url>
+    <loc>https://asdalexey.github.io/litely/ru/</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asdalexey.github.io/litely/" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asdalexey.github.io/litely/ru/" />
+  </url>
+  <url>
+    <loc>https://asdalexey.github.io/litely/privacy.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asdalexey.github.io/litely/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asdalexey.github.io/litely/ru/privacy.html" />
+  </url>
+  <url>
+    <loc>https://asdalexey.github.io/litely/ru/privacy.html</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.2</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://asdalexey.github.io/litely/privacy.html" />
+    <xhtml:link rel="alternate" hreflang="ru" href="https://asdalexey.github.io/litely/ru/privacy.html" />
+  </url>
+</urlset>

@@ -68,6 +68,50 @@ async function build() {
     console.log(`Privacy: ${privacyHTML.length} → ${minPrivacy.length} (${Math.round((1 - minPrivacy.length / privacyHTML.length) * 100)}%)`);
   }
 
+  // Minify ru/index.html
+  const ruDir = path.join(DIST, 'ru');
+  fs.mkdirSync(ruDir, { recursive: true });
+  const ruIndexPath = path.join(__dirname, 'ru', 'index.html');
+  if (fs.existsSync(ruIndexPath)) {
+    const ruHTML = fs.readFileSync(ruIndexPath, 'utf8');
+    const minRuHTML = await minifyHTML(ruHTML, {
+      collapseWhitespace: true,
+      removeComments: true,
+      removeRedundantAttributes: true,
+      removeEmptyAttributes: true,
+      minifyCSS: true,
+      minifyJS: true,
+      minifyURLs: true,
+    });
+    fs.writeFileSync(path.join(ruDir, 'index.html'), minRuHTML);
+    console.log(`RU Index: ${ruHTML.length} → ${minRuHTML.length} (${Math.round((1 - minRuHTML.length / ruHTML.length) * 100)}%)`);
+  }
+
+  // Minify ru/privacy.html
+  const ruPrivacyPath = path.join(__dirname, 'ru', 'privacy.html');
+  if (fs.existsSync(ruPrivacyPath)) {
+    const ruPrivHTML = fs.readFileSync(ruPrivacyPath, 'utf8');
+    const minRuPriv = await minifyHTML(ruPrivHTML, {
+      collapseWhitespace: true,
+      removeComments: true,
+      removeRedundantAttributes: true,
+      removeEmptyAttributes: true,
+      minifyCSS: true,
+      minifyJS: true,
+    });
+    fs.writeFileSync(path.join(ruDir, 'privacy.html'), minRuPriv);
+    console.log(`RU Privacy: ${ruPrivHTML.length} → ${minRuPriv.length} (${Math.round((1 - minRuPriv.length / ruPrivHTML.length) * 100)}%)`);
+  }
+
+  // Copy robots.txt and sitemap.xml
+  for (const file of ['robots.txt', 'sitemap.xml']) {
+    const filePath = path.join(__dirname, file);
+    if (fs.existsSync(filePath)) {
+      fs.copyFileSync(filePath, path.join(DIST, file));
+      console.log(`${file}: copied`);
+    }
+  }
+
   // Copy images
   const imagesDir = path.join(__dirname, 'images');
   const distImages = path.join(DIST, 'images');

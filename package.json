@@ -4,7 +4,6 @@
   "private": true,
   "description": "Litely landing page",
   "scripts": {
-    "build": "node build.js",
     "release": "node build.js && git add docs/ && git status"
   },
   "devDependencies": {

@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#06060a">
+  <meta name="robots" content="noindex, nofollow" />
   <title>Litely — Sign In</title>
   <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
   <link rel="icon" href="../images/favicon-32x32.png" sizes="32x32" type="image/png" />
@@ -330,13 +331,14 @@
       }
     };
 
-    var lang = localStorage.getItem('litely-lang') || (/^ru\b/i.test(navigator.language) ? 'ru' : 'en');
+    var lang = /^ru\b/i.test(navigator.language) ? 'ru' : 'en';
     var t = i18n[lang];
 
     document.documentElement.lang = lang;
     document.title = t.title;
     document.getElementById('msg').textContent = t.redirecting;
     document.getElementById('backLinkText').textContent = t.backLink;
+    document.getElementById('backLink').href = lang === 'ru' ? '../ru/' : '../';
 
     var msgEl = document.getElementById('msg');
     var hintEl = document.getElementById('hint');

@@ -16,7 +16,7 @@
   --border-hover: #2a2a3e;
   --text: #eeeef0;
   --text-secondary: #9898b0;
-  --text-muted: #8888a4;
+  --text-muted: #9494ae;
   --accent: #7c3aed;
   --accent-light: #a78bfa;
   --accent-blue: #3b82f6;
@@ -104,6 +104,15 @@ body {
   font-size: 0.85rem;
 }
 
+.nav__link:focus-visible,
+.btn:focus-visible,
+.lang-btn:focus-visible,
+.faq-item__q:focus-visible,
+.faq__question:focus-visible {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 2px;
+}
+
 /* ═══ Header ═══ */
 .header {
   position: sticky;
@@ -178,7 +187,7 @@ body {
   background: var(--surface);
   border: 1px solid var(--border);
   color: var(--text);
-  padding: 5px 12px;
+  padding: 8px 16px;
   border-radius: var(--radius-xs);
   font-family: inherit;
   font-size: 0.75rem;
@@ -191,6 +200,10 @@ body {
 .lang-btn:hover {
   border-color: var(--accent);
   background: var(--surface-hover);
+}
+
+a.lang-btn {
+  text-decoration: none;
 }
 
 /* ═══ Hero ═══ */
@@ -211,6 +224,7 @@ body {
   background: radial-gradient(ellipse, rgba(124, 58, 237, 0.12) 0%, transparent 70%);
   pointer-events: none;
   animation: glow-drift 10s ease-in-out infinite alternate;
+  will-change: transform;
 }
 
 .hero__glow--blue {
@@ -239,7 +253,7 @@ body {
 
 .hero__title {
   font-size: clamp(2.6rem, 6vw, 4rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.04em;
   line-height: 1.05;
   margin-bottom: 20px;
@@ -514,7 +528,7 @@ body {
 
 .stats__value {
   font-size: 2.4rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.03em;
   background: linear-gradient(135deg, var(--accent-light) 0%, var(--accent-blue) 100%);
   -webkit-background-clip: text;
@@ -535,6 +549,14 @@ body {
   padding: 100px 0;
 }
 
+/* Performance: skip rendering of off-screen sections */
+.section:not(:first-of-type),
+.stats,
+.hero__screenshots {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 600px;
+}
+
 .section--alt {
   background: var(--bg-subtle);
 }
@@ -546,7 +568,7 @@ body {
 
 .section__title {
   font-size: clamp(1.6rem, 3vw, 2.2rem);
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.03em;
   line-height: 1.15;
   margin-bottom: 16px;
@@ -1080,254 +1102,6 @@ body {
   height: auto;
 }
 
-/* ═══ Jira Flow Visual ═══ */
-.jira-flow {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  padding: 28px;
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-}
-
-.jira-flow__step {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  padding: 14px 16px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.jira-flow__step:hover {
-  border-color: var(--border-hover);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-.jira-flow__step--success {
-  border-color: rgba(16, 185, 129, 0.25);
-  background: rgba(16, 185, 129, 0.04);
-}
-
-.jira-flow__step-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.jira-flow__step-icon--purple {
-  background: var(--accent-glow);
-  color: var(--accent-light);
-}
-
-.jira-flow__step-icon--blue {
-  background: rgba(59, 130, 246, 0.12);
-  color: var(--accent-blue);
-}
-
-.jira-flow__step-icon--green {
-  background: var(--green-glow);
-  color: var(--green);
-}
-
-.jira-flow__step-content {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-}
-
-.jira-flow__step-title {
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--text);
-}
-
-.jira-flow__step-detail {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.jira-flow__badge {
-  color: var(--green);
-  background: var(--green-glow);
-  border: 1px solid rgba(16, 185, 129, 0.2);
-  border-radius: var(--radius-xs);
-  padding: 1px 6px;
-  font-size: 0.7rem;
-  font-weight: 700;
-}
-
-.jira-flow__step-url {
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  font-family: 'SF Mono', 'Fira Code', monospace;
-}
-
-.jira-flow__step-url strong {
-  color: var(--accent-light);
-  font-weight: 700;
-}
-
-.jira-flow__step-markup {
-  font-size: 0.8rem;
-  color: var(--text-muted);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.jira-flow__step-markup code {
-  font-family: 'SF Mono', 'Fira Code', monospace;
-  font-size: 0.75rem;
-  color: var(--green);
-  background: var(--green-glow);
-  padding: 2px 8px;
-  border-radius: var(--radius-xs);
-}
-
-.jira-flow__connector {
-  display: flex;
-  justify-content: center;
-  padding: 4px 0;
-  color: var(--text-muted);
-}
-
-.jira-flow__accounts {
-  margin-top: 20px;
-  padding-top: 20px;
-  border-top: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.jira-flow__accounts-header {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.jira-flow__accounts-label {
-  font-size: 0.65rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: var(--text-muted);
-}
-
-.jira-flow__accounts-count {
-  font-size: 0.65rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  background: rgba(255, 255, 255, 0.06);
-  padding: 1px 7px;
-  border-radius: 10px;
-}
-
-.jira-flow__account {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 10px 14px;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-}
-
-.jira-visual__avatar {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.65rem;
-  font-weight: 800;
-  color: #fff;
-  flex-shrink: 0;
-  letter-spacing: 0.02em;
-}
-
-.jira-visual__avatar--purple {
-  background: linear-gradient(135deg, #7c3aed, #6d28d9);
-}
-
-.jira-visual__avatar--blue {
-  background: linear-gradient(135deg, #3b82f6, #2563eb);
-}
-
-.jira-visual__account-info {
-  display: flex;
-  flex-direction: column;
-  min-width: 0;
-  flex: 1;
-}
-
-.jira-visual__account-name {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--text);
-}
-
-.jira-visual__account-url {
-  font-size: 0.7rem;
-  color: var(--text-muted);
-}
-
-.jira-visual__toggle {
-  width: 40px;
-  height: 22px;
-  border-radius: 11px;
-  background: rgba(255, 255, 255, 0.1);
-  position: relative;
-  flex-shrink: 0;
-}
-
-.jira-visual__toggle::after {
-  content: '';
-  position: absolute;
-  top: 3px;
-  left: 3px;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: var(--text-muted);
-  transition: transform 0.2s, background 0.2s;
-}
-
-.jira-visual__toggle--on {
-  background: var(--accent-blue);
-}
-
-.jira-visual__toggle--on::after {
-  transform: translateX(18px);
-  background: #fff;
-}
-
-/* legacy demo — kept for compatibility */
-.jira-flow__demo {
-  margin-top: 20px;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
-  border: 1px solid var(--border);
-}
-
-.jira-flow__demo img {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
 /* ═══ Cards ═══ */
 .card-grid {
   display: grid;
@@ -1441,7 +1215,7 @@ body {
 
 .perf-stat__value {
   font-size: 4rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1;
   background: linear-gradient(135deg, var(--green), #34d399);
@@ -1634,6 +1408,128 @@ body {
   }
 }
 
+/* ═══ FAQ ═══ */
+.faq-list {
+  max-width: 768px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.faq-item[open] {
+  border-color: var(--accent);
+}
+
+.faq-item__q {
+  padding: 20px 24px;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--text);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.faq-item__q::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item__q::after {
+  content: '+';
+  font-size: 1.25rem;
+  color: var(--text-muted);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.faq-item[open] .faq-item__q::after {
+  content: '−';
+  color: var(--accent-light);
+}
+
+.faq-item__a {
+  padding: 0 24px 20px;
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+/* ═══ FAQ (alternate class names) ═══ */
+.faq {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.faq__item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.faq__item:hover {
+  border-color: var(--border-hover);
+}
+
+.faq__item[open] {
+  border-color: var(--accent);
+}
+
+.faq__question {
+  padding: 20px 24px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--text);
+  transition: color 0.2s;
+}
+
+.faq__question::-webkit-details-marker {
+  display: none;
+}
+
+.faq__question::after {
+  content: '+';
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.faq__item[open] .faq__question::after {
+  content: '−';
+  color: var(--accent-light);
+}
+
+.faq__answer {
+  padding: 0 24px 20px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
 /* ═══ Responsive ═══ */
 @media (max-width: 900px) {
   .logo__slogan {
@@ -1738,5 +1634,16 @@ body {
 
   .demo__name {
     max-width: 100px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

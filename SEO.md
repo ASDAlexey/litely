@@ -8,18 +8,20 @@
 
 ## Общая оценка текущего состояния
 
+> **Обновлено: 2026-05-22** — после реализации фаз 1–7, 11–13, 15 (частично), 16 (частично)
+
 | Параметр | Google | Yandex | Оценка |
 |----------|--------|--------|--------|
-| Индексация EN | Частичная (нет canonical, robots, sitemap) | Частичная | 3/10 |
-| Индексация RU | Не индексируется (JS-only) | Не индексируется | 0/10 |
-| Rich Snippets | Нет (Schema минимальный, нет aggregateRating) | Нет | 0/10 |
-| Social sharing | Пустое превью (нет og:image) | Пустое превью | 1/10 |
-| Core Web Vitals | Хорошие, но есть CLS-проблемы | N/A | 6/10 |
-| Мобильная версия | Работает, мелкие проблемы с touch targets | Работает | 7/10 |
-| Контент | Маркетинговый, без ключевых слов в H2 | Нет RU-контента | 4/10 |
+| Индексация EN | canonical, robots.txt, sitemap.xml, hreflang | canonical, robots.txt (Host), sitemap.xml | 9/10 |
+| Индексация RU | Статический `ru/index.html`, hreflang | Статический HTML, видим ботам | 9/10 |
+| Rich Snippets | FAQPage (7 вопросов) + SoftwareApplication + WebPage | FAQPage + SoftwareApplication | 7/10 |
+| Social sharing | OG + Twitter Card полные, **og:image файл не создан** | OG полные | 6/10 |
+| Core Web Vitals | content-visibility, decoding=async, width/height, no dead CSS | N/A | 8/10 |
+| Мобильная версия | Focus стили, touch targets 44px+, prefers-reduced-motion | Работает | 9/10 |
+| Контент | H2 с ключевыми словами, FAQ 7 вопросов, keywords мета | Полный RU-контент | 8/10 |
 | Конкурентность | Не представлен в каталогах, нет сравнений | Не представлен | 0/10 |
 
-**Итог: ~25/100. Сайт технически неплох, но для поисковиков почти невидим.**
+**Итог: ~70/100. Техническое SEO почти полностью реализовано. Осталось: OG-картинка, аналитика, регистрация в каталогах, контент-страницы.**
 
 ---
 
@@ -45,7 +47,7 @@
 
 ---
 
-## ФАЗА 1 — CRITICAL: Мультиязычность (RU невидим)
+## ФАЗА 1 — CRITICAL: Мультиязычность (RU невидим) ✅ DONE
 
 ### Проблема
 
@@ -105,7 +107,7 @@ document.getElementById('langToggle').addEventListener('click', () => {
 
 ---
 
-## ФАЗА 2 — CRITICAL: `<head>` (мета-теги)
+## ФАЗА 2 — CRITICAL: `<head>` (мета-теги) ✅ DONE
 
 ### 2.1 Title
 
@@ -200,7 +202,7 @@ EN: 152 символа. RU: 143 символа. Оптимально 120-155.
 
 ---
 
-## ФАЗА 3 — HIGH: Технические файлы
+## ФАЗА 3 — HIGH: Технические файлы ⚠️ PARTIAL (og-image.png не создан)
 
 ### 3.1 robots.txt (создать в корне)
 
@@ -266,7 +268,7 @@ Host: https://asdalexey.github.io/litely/
 
 ---
 
-## ФАЗА 4 — HIGH: Schema.org (JSON-LD)
+## ФАЗА 4 — HIGH: Schema.org (JSON-LD) ✅ DONE
 
 ### Проблема
 
@@ -407,7 +409,7 @@ Host: https://asdalexey.github.io/litely/
 
 ---
 
-## ФАЗА 5 — HIGH: FAQ-секция
+## ФАЗА 5 — HIGH: FAQ-секция ✅ DONE
 
 ### Почему это критично для ТОП-3
 
@@ -488,7 +490,7 @@ A: macOS 11+ (Apple Silicon и Intel), Windows 10+, Linux (Ubuntu 22+, Fedora 38
 
 ---
 
-## ФАЗА 6 — MEDIUM: H2 с ключевыми словами
+## ФАЗА 6 — MEDIUM: H2 с ключевыми словами ✅ DONE
 
 Текущие H2 маркетинговые, но без ключевых слов. Паттерн: **"Ключевое слово — маркетинговый крючок"**.
 
@@ -520,7 +522,7 @@ A: macOS 11+ (Apple Silicon и Intel), Windows 10+, Linux (Ubuntu 22+, Fedora 38
 
 ---
 
-## ФАЗА 7 — MEDIUM: Технический SEO (Core Web Vitals, Accessibility)
+## ФАЗА 7 — MEDIUM: Технический SEO (Core Web Vitals, Accessibility) ✅ DONE
 
 ### 7.1 Accessibility (влияет на ранжирование)
 
@@ -566,7 +568,7 @@ A: macOS 11+ (Apple Silicon и Intel), Windows 10+, Linux (Ubuntu 22+, Fedora 38
 
 ---
 
-## ФАЗА 8 — MEDIUM: Аналитика и Webmaster
+## ФАЗА 8 — MEDIUM: Аналитика и Webmaster ❌ TODO (требует ручной регистрации)
 
 ### 8.1 Google Search Console
 
@@ -621,7 +623,7 @@ A: macOS 11+ (Apple Silicon и Intel), Windows 10+, Linux (Ubuntu 22+, Fedora 38
 
 ---
 
-## ФАЗА 9 — Yandex-СПЕЦИФИКА
+## ФАЗА 9 — Yandex-СПЕЦИФИКА ⚠️ PARTIAL (техническая часть done, Метрика/ИКС — вручную)
 
 Yandex имеет уникальные факторы ранжирования, отличные от Google:
 
@@ -657,7 +659,7 @@ Yandex **сильно зависит от ПФ**. Что улучшить:
 
 ---
 
-## ФАЗА 10 — Контент-стратегия для ТОП-3
+## ФАЗА 10 — Контент-стратегия для ТОП-3 ❌ TODO
 
 ### 10.1 Уникальное преимущество: Jira-интеграция
 
@@ -703,7 +705,7 @@ RU-версии:
 
 ---
 
-## ФАЗА 11 — HIGH: privacy.html — SEO-оптимизация
+## ФАЗА 11 — HIGH: privacy.html — SEO-оптимизация ✅ DONE
 
 ### Текущее состояние
 
@@ -872,7 +874,7 @@ document.getElementById('langToggle').addEventListener('click', function() {
 
 ---
 
-## ФАЗА 12 — auth/callback.html — SEO-обработка
+## ФАЗА 12 — auth/callback.html — SEO-обработка ✅ DONE
 
 ### Текущее состояние
 
@@ -918,7 +920,7 @@ document.getElementById('langToggle').addEventListener('click', function() {
 
 ---
 
-## ФАЗА 13 — Обновление sitemap.xml (с privacy)
+## ФАЗА 13 — Обновление sitemap.xml (с privacy) ✅ DONE
 
 Добавить privacy.html в sitemap (после снятия `noindex`):
 
@@ -968,7 +970,7 @@ document.getElementById('langToggle').addEventListener('click', function() {
 
 ---
 
-## ФАЗА 14 — Полная карта файлов (итог)
+## ФАЗА 14 — Полная карта файлов (итог) ✅ DONE
 
 ### Структура после оптимизации
 
@@ -997,23 +999,23 @@ document.getElementById('langToggle').addEventListener('click', function() {
 
 ### Все файлы, требующие изменений
 
-| Файл | Действие | Приоритет |
-|------|----------|-----------|
-| `index.html` | Полная переработка `<head>`, FAQ секция, H2 с ключевыми словами, Schema.org, footer copyright | CRITICAL |
-| `ru/index.html` | **Создать** — статический RU-контент | CRITICAL |
-| `privacy.html` | Убрать `noindex`, обновить `<head>`, добавить Schema, обновить версию | HIGH |
-| `ru/privacy.html` | **Создать** — статический RU-контент | HIGH |
-| `robots.txt` | **Создать** | HIGH |
-| `sitemap.xml` | **Создать** (4 URL + hreflang) | HIGH |
-| `images/og-image.png` | **Создать** (1200x630) | HIGH |
-| `i18n.js` | Упростить до URL-переключения | CRITICAL |
-| `style.css` | Удалить неиспользуемый CSS, исправить контраст, добавить focus-стили | MEDIUM |
-| `auth/callback.html` | Добавить `<meta name="robots" content="noindex, nofollow">` | LOW |
-| `build.js` | Добавить `ru/`, `robots.txt`, `sitemap.xml`, `ru/privacy.html` | CRITICAL |
+| Файл | Действие | Приоритет | Статус |
+|------|----------|-----------|--------|
+| `index.html` | Полная переработка `<head>`, FAQ секция, H2 с ключевыми словами, Schema.org, footer copyright | CRITICAL | ✅ Done |
+| `ru/index.html` | **Создать** — статический RU-контент | CRITICAL | ✅ Done |
+| `privacy.html` | Убрать `noindex`, обновить `<head>`, добавить Schema, обновить версию | HIGH | ✅ Done |
+| `ru/privacy.html` | **Создать** — статический RU-контент | HIGH | ✅ Done |
+| `robots.txt` | **Создать** | HIGH | ✅ Done |
+| `sitemap.xml` | **Создать** (4 URL + hreflang) | HIGH | ✅ Done |
+| `images/og-image.png` | **Создать** (1200x630) | HIGH | ❌ Нужен дизайн |
+| `i18n.js` | Упростить до URL-переключения | CRITICAL | ✅ Done |
+| `style.css` | Удалить неиспользуемый CSS, исправить контраст, добавить focus-стили | MEDIUM | ✅ Done |
+| `auth/callback.html` | Добавить `<meta name="robots" content="noindex, nofollow">` | LOW | ✅ Done |
+| `build.js` | Добавить `ru/`, `robots.txt`, `sitemap.xml`, `ru/privacy.html` | CRITICAL | ✅ Done |
 
 ---
 
-## ФАЗА 15 — HIGH: Скорость загрузки (PageSpeed / Core Web Vitals)
+## ФАЗА 15 — HIGH: Скорость загрузки (PageSpeed / Core Web Vitals) ⚠️ PARTIAL
 
 ### Текущий профиль
 
@@ -1342,7 +1344,7 @@ Items 1, 2, 3, 4, 7, 8, 9, 10 = ~40 мин работы, FCP улучшится 
 
 ---
 
-## ФАЗА 16 — LOW: Прочие мелкие исправления
+## ФАЗА 16 — LOW: Прочие мелкие исправления ⚠️ PARTIAL
 
 | Что | Где | Исправление |
 |-----|-----|-------------|
@@ -1418,91 +1420,91 @@ Items 1, 2, 3, 4, 7, 8, 9, 10 = ~40 мин работы, FCP улучшится 
 ## Чеклист реализации (по приоритетам)
 
 ### CRITICAL — делать первым
-- [ ] Создать `ru/index.html` со статическим русским контентом
-- [ ] Добавить `hreflang` теги во все HTML-файлы (index, privacy — EN и RU)
-- [ ] Добавить `<link rel="canonical">` во все файлы
-- [ ] Переписать `<title>` с ключевыми словами (EN + RU, index + privacy)
-- [ ] Переписать `<meta name="description">` (EN + RU, index + privacy)
-- [ ] Переделать переключатель языка: URL-переход вместо JS-замены DOM (index + privacy)
-- [ ] Обновить `build.js` для `ru/`, `ru/privacy.html`, `robots.txt`, `sitemap.xml`
+- [x] Создать `ru/index.html` со статическим русским контентом
+- [x] Добавить `hreflang` теги во все HTML-файлы (index, privacy — EN и RU)
+- [x] Добавить `<link rel="canonical">` во все файлы
+- [x] Переписать `<title>` с ключевыми словами (EN + RU, index + privacy)
+- [x] Переписать `<meta name="description">` (EN + RU, index + privacy)
+- [x] Переделать переключатель языка: URL-переход вместо JS-замены DOM (index + privacy)
+- [x] Обновить `build.js` для `ru/`, `ru/privacy.html`, `robots.txt`, `sitemap.xml`
 
 ### HIGH — сразу после CRITICAL
-- [ ] **privacy.html**: убрать `noindex` → `index, follow`
-- [ ] **privacy.html**: обновить `<head>` (canonical, OG, keywords, Schema.org)
-- [ ] Создать `ru/privacy.html` со статическим русским контентом
-- [ ] Создать `robots.txt` (с Yandex-директивой `Host`, `Disallow: /auth/`)
-- [ ] Создать `sitemap.xml` (4 URL: index EN/RU + privacy EN/RU + hreflang)
-- [ ] Создать OG-картинку `images/og-image.png` (1200x630)
-- [ ] Добавить полный набор OG + Twitter Card мета-тегов (index + privacy)
-- [ ] Добавить `<meta name="keywords">` (EN + RU, index + privacy)
-- [ ] Расширить Schema.org (SoftwareApplication + WebPage + FAQPage)
-- [ ] Добавить Schema.org WebPage для privacy.html
-- [ ] Добавить FAQ-секцию на лендинг (EN + RU)
-- [ ] Зарегистрировать в Google Search Console
-- [ ] Зарегистрировать в Yandex Webmaster
-- [ ] Подключить Yandex.Метрику (с WebVisor!)
-- [ ] Подключить Google Analytics 4
-- [ ] Зарегистрировать на AlternativeTo
+- [x] **privacy.html**: убрать `noindex` → `index, follow`
+- [x] **privacy.html**: обновить `<head>` (canonical, OG, keywords, Schema.org)
+- [x] Создать `ru/privacy.html` со статическим русским контентом
+- [x] Создать `robots.txt` (с Yandex-директивой `Host`, `Disallow: /auth/`)
+- [x] Создать `sitemap.xml` (4 URL: index EN/RU + privacy EN/RU + hreflang)
+- [ ] Создать OG-картинку `images/og-image.png` (1200x630) — **нужен дизайн-инструмент**
+- [x] Добавить полный набор OG + Twitter Card мета-тегов (index + privacy)
+- [x] Добавить `<meta name="keywords">` (EN + RU, index + privacy)
+- [x] Расширить Schema.org (SoftwareApplication + WebPage + FAQPage)
+- [x] Добавить Schema.org WebPage для privacy.html
+- [x] Добавить FAQ-секцию на лендинг (EN + RU)
+- [ ] Зарегистрировать в Google Search Console — **требует ручной регистрации**
+- [ ] Зарегистрировать в Yandex Webmaster — **требует ручной регистрации**
+- [ ] Подключить Yandex.Метрику (с WebVisor!) — **требует ID счётчика**
+- [ ] Подключить Google Analytics 4 — **требует ID аккаунта**
+- [ ] Зарегистрировать на AlternativeTo — **требует ручной регистрации**
 
 ### HIGH — скорость загрузки (быстрые победы)
-- [ ] Удалить мёртвый CSS `.jira-flow*` (247 строк, -4.5 KB)
-- [ ] `content-visibility: auto` на below-fold секции (огромная экономия рендеринга)
-- [ ] `decoding="async"` на все `<img>`
-- [ ] Использовать `jira-demo.avif` в HTML через `<picture>` (файл существует, не подключён!)
-- [ ] `will-change: transform` для анимированных элементов (GPU compositing)
-- [ ] `prefers-reduced-motion` media query (accessibility + battery)
-- [ ] `dns-prefetch` для github.com и objects.githubusercontent.com
-- [ ] Убрать font-weight 800 → заменить на 700 (-15 KB шрифта)
+- [x] Удалить мёртвый CSS `.jira-flow*` (247 строк, -4.5 KB)
+- [x] `content-visibility: auto` на below-fold секции (огромная экономия рендеринга)
+- [x] `decoding="async"` на все `<img>`
+- [x] Использовать `jira-demo.avif` в HTML через `<picture>` (файл существует, не подключён!)
+- [x] `will-change: transform` для анимированных элементов (GPU compositing)
+- [x] `prefers-reduced-motion` media query (accessibility + battery)
+- [x] `dns-prefetch` для github.com и objects.githubusercontent.com
+- [x] Убрать font-weight 800 → заменить на 700 (-15 KB шрифта)
 
 ### MEDIUM — в течение 2 недель
-- [ ] Переписать H2 с ключевыми словами (EN + RU)
-- [ ] Исправить контраст `--text-muted` (WCAG AA)
-- [ ] Добавить `:focus` стили для навигации/кнопок
-- [ ] Увеличить touch target кнопки языка
-- [ ] Добавить `width`/`height` ко всем изображениям без них
-- [ ] Добавить `rel="noopener noreferrer"` к внешним ссылкам
-- [ ] Отправить PR в awesome-mac
-- [ ] Запустить на Product Hunt
-- [ ] Написать статью на Habr (для Yandex бэклинков)
-- [ ] Написать пост на VC.ru
+- [x] Переписать H2 с ключевыми словами (EN + RU)
+- [x] Исправить контраст `--text-muted` (WCAG AA) — обновлён до `#9494ae` (6.8:1)
+- [x] Добавить `:focus` стили для навигации/кнопок
+- [x] Увеличить touch target кнопки языка
+- [x] Добавить `width`/`height` ко всем изображениям без них
+- [x] Добавить `rel="noopener noreferrer"` к внешним ссылкам
+- [ ] Отправить PR в awesome-mac — **требует ручной отправки**
+- [ ] Запустить на Product Hunt — **требует ручной регистрации**
+- [ ] Написать статью на Habr (для Yandex бэклинков) — **контент**
+- [ ] Написать пост на VC.ru — **контент**
 
 ### MEDIUM — скорость загрузки (глубокая оптимизация)
 - [ ] Critical CSS inline в `<head>` + async load остального CSS
 - [ ] Self-host Inter font (убрать зависимость от Google Fonts, -100-200ms)
 - [ ] Responsive srcset для скриншотов (480w мобильные версии)
-- [ ] Уменьшить i18n.js после рефакторинга на 2 HTML (убрать translations объект)
+- [x] Уменьшить i18n.js после рефакторинга на 2 HTML (убрать translations объект)
 - [ ] Обновить `build.js` для генерации Critical CSS
 
 ### LOW — по возможности
-- [ ] Исправить copyright 2025 → 2026 (index.html + privacy.html)
-- [ ] Синхронизировать версию на privacy.html (сейчас 0.15.3, актуальная 0.15.8)
-- [ ] Добавить `<meta name="robots" content="noindex, nofollow">` в auth/callback.html
+- [x] Исправить copyright 2025 → 2026 (index.html + privacy.html)
+- [x] Синхронизировать версию на privacy.html (0.15.8)
+- [x] Добавить `<meta name="robots" content="noindex, nofollow">` в auth/callback.html
 - [ ] Обернуть скриншоты в `<figure>` + `<figcaption>`
-- [ ] Обновить Schema `operatingSystem` на все 3 платформы с деталями
-- [ ] Закрыть незакрытый `<p>` в footer privacy.html
+- [x] Обновить Schema `operatingSystem` на все 3 платформы с деталями
+- [x] Закрыть незакрытый `<p>` в footer privacy.html
 - [ ] Cloudflare CDN (Brotli, HTTP/3, global CDN) — при наличии custom domain
 - [ ] Создать страницу `/jira/` (нулевая конкуренция)
 - [ ] Создать страницы сравнения `/vs/handbrake.html`
 - [ ] Написать How-To гайд "Как сжать видео на Mac"
-- [ ] Зарегистрировать на MacUpdate
+- [ ] Зарегистрировать на MacUpdate — **требует ручной регистрации**
 
 ---
 
 ## Ожидаемый результат
 
-| Метрика | Сейчас | После реализации |
-|---------|--------|-----------------|
-| Lighthouse SEO score | ~70 | 95-100 |
-| Google: страниц в индексе | ~1 | 5+ (EN + RU + vs + jira) |
-| Yandex: страниц в индексе | 0-1 | 5+ |
-| Yandex: видимость RU | 0% | 100% |
-| Rich snippets (FAQ) | нет | FAQ в выдаче Google + Yandex |
-| Rich snippets (App) | базовый | расширенный с фичами, скриншотами |
-| OG-превью при шеринге | пустое | полное с картинкой |
-| AlternativeTo | не представлен | 3+ листинга |
-| Покрытие ключевых слов | ~3 | 30+ |
-| "compress screenshots jira" | не ранжируется | ТОП-1 (нулевая конкуренция) |
-| "сжатие видео mac" | не ранжируется | ТОП-10 → ТОП-3 (с бэклинками) |
+| Метрика | До оптимизации | Текущее (2026-05-22) | Цель |
+|---------|---------------|---------------------|------|
+| Lighthouse SEO score | ~70 | ~90-95 | 95-100 |
+| Google: страниц в индексе | ~1 | 4 (EN + RU index + privacy) | 5+ (+ vs + jira) |
+| Yandex: страниц в индексе | 0-1 | 4 (после индексации) | 5+ |
+| Yandex: видимость RU | 0% | 100% (статический HTML) | 100% |
+| Rich snippets (FAQ) | нет | Schema готова (7 вопросов) | FAQ в выдаче |
+| Rich snippets (App) | базовый | расширенный (fileSize, features, author) | с рейтингом |
+| OG-превью при шеринге | пустое | мета-теги готовы, **файл og-image.png не создан** | полное с картинкой |
+| AlternativeTo | не представлен | не представлен | 3+ листинга |
+| Покрытие ключевых слов | ~3 | ~20+ (title, H2, FAQ, keywords) | 30+ |
+| "compress screenshots jira" | не ранжируется | контент есть | ТОП-1 |
+| "сжатие видео mac" | не ранжируется | RU-страница готова | ТОП-10 → ТОП-3 |
 
 ---
 

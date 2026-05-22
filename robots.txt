@@ -1,0 +1,19 @@
+# TEMPORARY: Site closed for indexing while builds are in progress
+# To open: replace this file with the production version below
+#
+# --- PRODUCTION VERSION (copy everything below this line) ---
+# User-agent: *
+# Allow: /
+# Disallow: /auth/
+#
+# Sitemap: https://asdalexey.github.io/litely/sitemap.xml
+#
+# # Yandex-specific
+# User-agent: Yandex
+# Allow: /
+# Disallow: /auth/
+# Host: https://asdalexey.github.io/litely/
+# --- END PRODUCTION VERSION ---
+
+User-agent: *
+Disallow: /
