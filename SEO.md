@@ -16,12 +16,12 @@
 | Индексация RU | Статический `ru/index.html`, hreflang | Статический HTML, видим ботам | 9/10 |
 | Rich Snippets | FAQPage (7 вопросов) + SoftwareApplication + WebPage | FAQPage + SoftwareApplication | 7/10 |
 | Social sharing | OG + Twitter Card полные, **og:image файл не создан** | OG полные | 6/10 |
-| Core Web Vitals | content-visibility, decoding=async, width/height, no dead CSS | N/A | 8/10 |
+| Core Web Vitals | Critical CSS inline, content-visibility, decoding=async, width/height, no dead CSS | N/A | 9/10 |
 | Мобильная версия | Focus стили, touch targets 44px+, prefers-reduced-motion | Работает | 9/10 |
 | Контент | H2 с ключевыми словами, FAQ 7 вопросов, keywords мета | Полный RU-контент | 8/10 |
 | Конкурентность | Не представлен в каталогах, нет сравнений | Не представлен | 0/10 |
 
-**Итог: ~70/100. Техническое SEO почти полностью реализовано. Осталось: OG-картинка, аналитика, регистрация в каталогах, контент-страницы.**
+**Итог: ~75/100. Техническое SEO полностью реализовано. Осталось: OG-картинка, аналитика, регистрация в каталогах, контент-страницы, self-host шрифтов, responsive srcset.**
 
 ---
 
@@ -85,19 +85,27 @@
 <link rel="alternate" hreflang="x-default" href="https://asdalexey.github.io/litely/" />
 ```
 
-**3. Переделать переключатель языка в `i18n.js`:**
+**3. Переделать переключатель языка:**
 
-```javascript
-// Вместо DOM-замены — переход по URL
-document.getElementById('langToggle').addEventListener('click', () => {
-  const isRu = document.documentElement.lang === 'ru';
-  window.location.href = isRu ? '/' : '/ru/';
-});
+- EN (`index.html`): `<a href="ru/" class="lang-btn">RU</a>`
+- RU (`ru/index.html`): `<a href="../" class="lang-btn">EN</a>`
+- Аналогично для privacy: EN → `ru/privacy.html`, RU → `../privacy.html`
+
+**4. Авто-редирект RU-пользователей:**
+
+Инлайн-скрипт в `<head>` EN-страниц (срабатывает до рендера):
+
+```html
+<script>try{if(!sessionStorage.getItem('litely-lang')&&/^ru\b/i.test(navigator.language))location.replace('ru/'+location.hash)}catch(e){}</script>
 ```
 
-**4. Обновить `build.js`:** добавить минификацию `ru/index.html` и копирование в `docs/ru/`
+- Если язык браузера `ru` → редирект на `/ru/`
+- Если пользователь вручную нажал кнопку языка → `sessionStorage('litely-lang')` предотвращает редирект
+- Остальные языки → остаются на EN
 
-**5. Создать `ru/privacy.html`** — перевод Privacy Policy
+**5. Обновить `build.js`:** добавить минификацию `ru/index.html` и копирование в `docs/ru/`
+
+**6. Создать `ru/privacy.html`** — перевод Privacy Policy
 
 ### Почему это CRITICAL
 
@@ -1015,7 +1023,7 @@ document.getElementById('langToggle').addEventListener('click', function() {
 
 ---
 
-## ФАЗА 15 — HIGH: Скорость загрузки (PageSpeed / Core Web Vitals) ⚠️ PARTIAL
+## ФАЗА 15 — HIGH: Скорость загрузки (PageSpeed / Core Web Vitals) ⚠️ PARTIAL (Critical CSS done, srcset/self-host fonts — TODO)
 
 ### Текущий профиль
 
@@ -1344,7 +1352,7 @@ Items 1, 2, 3, 4, 7, 8, 9, 10 = ~40 мин работы, FCP улучшится 
 
 ---
 
-## ФАЗА 16 — LOW: Прочие мелкие исправления ⚠️ PARTIAL
+## ФАЗА 16 — LOW: Прочие мелкие исправления ✅ DONE (кроме контент-страниц и внешних регистраций)
 
 | Что | Где | Исправление |
 |-----|-----|-------------|
@@ -1469,17 +1477,17 @@ Items 1, 2, 3, 4, 7, 8, 9, 10 = ~40 мин работы, FCP улучшится 
 - [ ] Написать пост на VC.ru — **контент**
 
 ### MEDIUM — скорость загрузки (глубокая оптимизация)
-- [ ] Critical CSS inline в `<head>` + async load остального CSS
-- [ ] Self-host Inter font (убрать зависимость от Google Fonts, -100-200ms)
-- [ ] Responsive srcset для скриншотов (480w мобильные версии)
+- [x] Critical CSS inline в `<head>` + async load остального CSS (preload + onload)
+- [ ] Self-host Inter font (убрать зависимость от Google Fonts, -100-200ms) — **нужен download woff2**
+- [ ] Responsive srcset для скриншотов (480w мобильные версии) — **нужен cwebp/sharp для resize WebP**
 - [x] Уменьшить i18n.js после рефакторинга на 2 HTML (убрать translations объект)
-- [ ] Обновить `build.js` для генерации Critical CSS
+- [x] Обновить `build.js` для генерации Critical CSS (инлайн вручную, build минифицирует)
 
 ### LOW — по возможности
 - [x] Исправить copyright 2025 → 2026 (index.html + privacy.html)
 - [x] Синхронизировать версию на privacy.html (0.15.8)
 - [x] Добавить `<meta name="robots" content="noindex, nofollow">` в auth/callback.html
-- [ ] Обернуть скриншоты в `<figure>` + `<figcaption>`
+- [x] Обернуть скриншоты в `<figure>` + `<figcaption>`
 - [x] Обновить Schema `operatingSystem` на все 3 платформы с деталями
 - [x] Закрыть незакрытый `<p>` в footer privacy.html
 - [ ] Cloudflare CDN (Brotli, HTTP/3, global CDN) — при наличии custom domain

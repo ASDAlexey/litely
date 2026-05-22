@@ -1,3 +1,10 @@
+/* ═══ Language Toggle Memory ═══ */
+document.addEventListener('click', function (e) {
+  if (e.target.closest('.lang-btn')) {
+    try { sessionStorage.setItem('litely-lang', '1'); } catch (_) {}
+  }
+});
+
 /* ═══ OS Detection ═══ */
 function detectOS() {
   var ua = navigator.userAgent || navigator.platform || '';
