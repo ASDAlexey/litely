@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
     <meta name="description" content="Free batch video & image compressor for Mac, Windows & Linux. Compress HEIC, WebP, AVIF, TIFF, BMP. H.265, AV1 codecs. GPU-accelerated. Up to 95% smaller." />
-    <meta name="keywords" content="video compression, image compression, video converter, photo optimizer, WebP, AVIF, H.265, AV1, HEIC converter, HEIF to WebP, compress iPhone photos, BMP compressor, TIFF optimizer, macOS, Windows, Linux, native app, batch compression, Jira integration, folder watcher" />
+    <meta name="keywords" content="video compression, image compression, video converter, photo optimizer, WebP, AVIF, H.265, AV1, HEIC converter, HEIF to WebP, compress iPhone photos, BMP compressor, TIFF optimizer, macOS, Windows, Linux, native app, batch compression, Jira integration, GitLab integration, folder watcher" />
     <meta name="author" content="Litely" />
 
     <title>Litely — Free Video &amp; Image Compressor for Mac, Windows &amp; Linux</title>
@@ -74,7 +74,7 @@
           "Image: WebP, AVIF, JPEG, PNG, SVG",
           "GPU-accelerated encoding (VideoToolbox)",
           "Batch resize and target file size",
-          "Jira integration with auto-upload",
+          "Jira &amp; GitLab integration with auto-upload",
           "Before/after visual comparison",
           "System tray with progress tracking",
           "Two-pass encoding",
@@ -139,7 +139,7 @@
             "name": "How is Litely different from HandBrake?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Litely is designed for automation — add a watch folder and every new file gets compressed automatically. No manual setup per file. It also includes image compression, Jira integration, batch resize, and a native UI using under 40 MB of memory."
+              "text": "Litely is designed for automation — add a watch folder and every new file gets compressed automatically. No manual setup per file. It also includes image compression, Jira &amp; GitLab integration, batch resize, and a native UI using under 40 MB of memory."
             }
           },
           {
@@ -265,7 +265,7 @@
         <figure class="hero__screenshot">
           <picture>
             <source srcset="images/app-dark.avif" type="image/avif" />
-            <img src="images/app-dark.webp" alt="Litely app — settings panel with compression, format conversion, and Jira integration" width="976" height="1008" loading="lazy" decoding="async" />
+            <img src="images/app-dark.webp" alt="Litely app — settings panel with compression, format conversion, and Jira &amp; GitLab integration" width="976" height="1008" loading="lazy" decoding="async" />
           </picture>
           <figcaption class="hero__screenshot-label" data-i18n="hero.dark">Dark theme</figcaption>
         </figure>
@@ -303,16 +303,16 @@
       </div>
     </section>
 
-    <!-- Jira Integration -->
+    <!-- Jira & GitLab Integration -->
     <section class="section section--jira" id="features">
       <div class="container">
         <div class="section__header" data-reveal>
           <div class="jira-hero__badges">
-            <span class="label" data-i18n="jira.label">Jira Integration</span>
+            <span class="label" data-i18n="jira.label">Jira &amp; GitLab Integration</span>
             <span class="label label--unique" data-i18n="jira.unique">Only in Litely</span>
           </div>
-          <h2 class="section__title section__title--xl" data-i18n="jira.title">Jira Screenshot Compression &mdash; Paste &amp; Go</h2>
-          <p class="section__desc" data-i18n="jira.desc">No other tool does this. Take a screenshot or record a video &mdash; Litely compresses it by up to 90%, converts the format, and puts the result in your clipboard. Switch to Jira, paste into a comment &mdash; the file uploads right into the issue. Markup is inserted automatically. Save the comment &mdash; done.</p>
+          <h2 class="section__title section__title--xl" data-i18n="jira.title">Compress &amp; Upload to Jira / GitLab &mdash; Paste &amp; Go</h2>
+          <p class="section__desc" data-i18n="jira.desc">No other tool does this. Take a screenshot or record a video &mdash; Litely compresses it by up to 90%, converts the format, and puts the result in your clipboard. Switch to Jira or GitLab, paste into a comment &mdash; the file uploads right into the issue or merge request. Markup is inserted automatically. Save &mdash; done.</p>
         </div>
 
         <div class="jira-timeline" data-reveal>
@@ -328,26 +328,28 @@
           </div>
           <div class="jira-timeline__step">
             <div class="jira-timeline__marker">3</div>
-            <h3 class="jira-timeline__title" data-i18n="jira.w3t">Paste into Jira</h3>
-            <p class="jira-timeline__desc" data-i18n="jira.w3d">Open a Jira comment and press <kbd>Cmd+V</kbd> on Mac or <kbd>Ctrl+V</kbd> on Windows/Linux. The file uploads directly into the issue with a progress indicator.</p>
+            <h3 class="jira-timeline__title" data-i18n="jira.w3t">Paste into Jira or GitLab</h3>
+            <p class="jira-timeline__desc" data-i18n="jira.w3d">Open a comment in Jira or a merge request in GitLab and press <kbd>Cmd+V</kbd> on Mac or <kbd>Ctrl+V</kbd> on Windows/Linux. The file uploads directly with a progress indicator.</p>
           </div>
           <div class="jira-timeline__step">
             <div class="jira-timeline__marker">4</div>
             <h3 class="jira-timeline__title" data-i18n="jira.w4t">Markup is ready</h3>
-            <p class="jira-timeline__desc" data-i18n="jira.w4d">Jira markup is inserted automatically &mdash; <code>!image.webp!</code> for images, <code>[^video.mp4]</code> for videos. Save the comment &mdash; the attachment is linked to the issue.</p>
+            <p class="jira-timeline__desc" data-i18n="jira.w4d">Platform markup is inserted automatically &mdash; Jira wiki syntax for Jira, Markdown for GitLab. Save the comment &mdash; the attachment is linked.</p>
           </div>
         </div>
 
         <div class="jira-chips" data-reveal>
-          <span class="jira-chip" data-i18n="jira.f1">Chrome extension for Jira</span>
+          <span class="jira-chip" data-i18n="jira.f1">Chrome extension for Jira &amp; GitLab</span>
           <span class="jira-chip" data-i18n="jira.f2">Chrome, Arc, Brave, Safari, Firefox, Edge</span>
           <span class="jira-chip" data-i18n="jira.f3">Multiple Jira instances</span>
+          <span class="jira-chip" data-i18n="jira.f4">Self-hosted &amp; cloud GitLab</span>
+          <span class="jira-chip" data-i18n="jira.f5">No GitLab token needed</span>
         </div>
 
         <div class="jira-demo" data-reveal>
           <picture>
             <source srcset="images/jira-demo.avif" type="image/avif" />
-            <img src="images/jira-demo.webp" alt="Litely for Jira &mdash; auto-uploading screenshot to Jira issue with progress indicator and markup insertion" width="1269" height="833" loading="lazy" decoding="async" />
+            <img src="images/jira-demo.webp" alt="Litely for Jira &amp; GitLab &mdash; auto-uploading screenshot with progress indicator and markup insertion" width="1269" height="833" loading="lazy" decoding="async" />
           </picture>
         </div>
       </div>
@@ -681,7 +683,7 @@
           </details>
           <details class="faq__item">
             <summary class="faq__question">How is Litely different from HandBrake?</summary>
-            <p class="faq__answer">Litely is designed for automation &mdash; add a watch folder and every new file gets compressed automatically. No manual setup per file. It also includes image compression, Jira integration, batch resize, and a native lightweight UI using under 40 MB of memory.</p>
+            <p class="faq__answer">Litely is designed for automation &mdash; add a watch folder and every new file gets compressed automatically. No manual setup per file. It also includes image compression, Jira &amp; GitLab integration, batch resize, and a native lightweight UI using under 40 MB of memory.</p>
           </details>
           <details class="faq__item">
             <summary class="faq__question">Does Litely work in the background?</summary>

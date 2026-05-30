@@ -73,7 +73,7 @@
           "Изображения: WebP, AVIF, JPEG, PNG, SVG",
           "GPU-ускоренное кодирование (VideoToolbox)",
           "Пакетный ресайз и целевой размер файла",
-          "Интеграция с Jira с автозагрузкой",
+          "Интеграция с Jira и GitLab с автозагрузкой",
           "Визуальное сравнение до/после",
           "Системный трей с отслеживанием прогресса",
           "Двухпроходное кодирование",
@@ -138,7 +138,7 @@
             "name": "Чем Litely отличается от HandBrake?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Litely создан для автоматизации — добавь папку наблюдения, и каждый новый файл сожмётся автоматически. Не нужно настраивать каждый файл. Также включает сжатие изображений, интеграцию с Jira, пакетный ресайз и нативный лёгкий интерфейс (<40 МБ памяти)."
+              "text": "Litely создан для автоматизации — добавь папку наблюдения, и каждый новый файл сожмётся автоматически. Не нужно настраивать каждый файл. Также включает сжатие изображений, интеграцию с Jira и GitLab, пакетный ресайз и нативный лёгкий интерфейс (<40 МБ памяти)."
             }
           },
           {
@@ -264,7 +264,7 @@
         <figure class="hero__screenshot">
           <picture>
             <source srcset="../images/app-dark.avif" type="image/avif" />
-            <img src="../images/app-dark.webp" alt="Litely — панель настроек с параметрами сжатия, конвертации форматов и интеграции с Jira" width="976" height="1008" loading="lazy" decoding="async" />
+            <img src="../images/app-dark.webp" alt="Litely — панель настроек с параметрами сжатия, конвертации форматов и интеграции с Jira и GitLab" width="976" height="1008" loading="lazy" decoding="async" />
           </picture>
           <figcaption class="hero__screenshot-label" data-i18n="hero.dark">Тёмная тема</figcaption>
         </figure>
@@ -302,16 +302,16 @@
       </div>
     </section>
 
-    <!-- Jira Integration -->
+    <!-- Jira & GitLab Integration -->
     <section class="section section--jira" id="features">
       <div class="container">
         <div class="section__header" data-reveal>
           <div class="jira-hero__badges">
-            <span class="label" data-i18n="jira.label">Интеграция с Jira</span>
+            <span class="label" data-i18n="jira.label">Интеграция с Jira и GitLab</span>
             <span class="label label--unique" data-i18n="jira.unique">Только в Litely</span>
           </div>
-          <h2 class="section__title section__title--xl" data-i18n="jira.title">Сжатие скриншотов для Jira &mdash; вставь и готово</h2>
-          <p class="section__desc" data-i18n="jira.desc">Ни один другой инструмент так не умеет. Сделайте скриншот или запишите видео &mdash; Litely сожмёт до 90%, сконвертирует формат и поместит результат в буфер обмена. Переключитесь в Jira, вставьте в комментарий &mdash; файл загрузится прямо в задачу. Разметка вставится автоматически. Сохраните комментарий &mdash; готово.</p>
+          <h2 class="section__title section__title--xl" data-i18n="jira.title">Сжатие и загрузка в Jira / GitLab &mdash; вставь и готово</h2>
+          <p class="section__desc" data-i18n="jira.desc">Ни один другой инструмент так не умеет. Сделайте скриншот или запишите видео &mdash; Litely сожмёт до 90%, сконвертирует формат и поместит результат в буфер обмена. Переключитесь в Jira или GitLab, вставьте в комментарий &mdash; файл загрузится прямо в задачу или мерж-реквест. Разметка вставится автоматически. Сохраните &mdash; готово.</p>
         </div>
 
         <div class="jira-timeline" data-reveal>
@@ -327,26 +327,28 @@
           </div>
           <div class="jira-timeline__step">
             <div class="jira-timeline__marker">3</div>
-            <h3 class="jira-timeline__title" data-i18n="jira.w3t">Вставьте в Jira</h3>
-            <p class="jira-timeline__desc" data-i18n="jira.w3d">Откройте комментарий в Jira и нажмите <kbd>Cmd+V</kbd> на Mac или <kbd>Ctrl+V</kbd> на Windows/Linux. Файл загрузится прямо в задачу с индикатором прогресса.</p>
+            <h3 class="jira-timeline__title" data-i18n="jira.w3t">Вставьте в Jira или GitLab</h3>
+            <p class="jira-timeline__desc" data-i18n="jira.w3d">Откройте комментарий в Jira или мерж-реквест в GitLab и нажмите <kbd>Cmd+V</kbd> на Mac или <kbd>Ctrl+V</kbd> на Windows/Linux. Файл загрузится с индикатором прогресса.</p>
           </div>
           <div class="jira-timeline__step">
             <div class="jira-timeline__marker">4</div>
             <h3 class="jira-timeline__title" data-i18n="jira.w4t">Разметка готова</h3>
-            <p class="jira-timeline__desc" data-i18n="jira.w4d">Jira-разметка вставится автоматически &mdash; <code>!image.webp!</code> для изображений, <code>[^video.mp4]</code> для видео. Сохраните комментарий &mdash; вложение привязано к задаче.</p>
+            <p class="jira-timeline__desc" data-i18n="jira.w4d">Разметка платформы вставится автоматически &mdash; Jira wiki-синтаксис для Jira, Markdown для GitLab. Сохраните комментарий &mdash; вложение привязано.</p>
           </div>
         </div>
 
         <div class="jira-chips" data-reveal>
-          <span class="jira-chip" data-i18n="jira.f1">Chrome-расширение для Jira</span>
+          <span class="jira-chip" data-i18n="jira.f1">Chrome-расширение для Jira и GitLab</span>
           <span class="jira-chip" data-i18n="jira.f2">Chrome, Arc, Brave, Safari, Firefox, Edge</span>
           <span class="jira-chip" data-i18n="jira.f3">Несколько Jira-инстансов</span>
+          <span class="jira-chip" data-i18n="jira.f4">Self-hosted и облачный GitLab</span>
+          <span class="jira-chip" data-i18n="jira.f5">GitLab-токен не нужен</span>
         </div>
 
         <div class="jira-demo" data-reveal>
           <picture>
             <source srcset="../images/jira-demo.avif" type="image/avif" />
-            <img src="../images/jira-demo.webp" alt="Litely для Jira — автозагрузка скриншота в задачу Jira с индикатором прогресса и вставкой разметки" width="1269" height="833" loading="lazy" decoding="async" />
+            <img src="../images/jira-demo.webp" alt="Litely для Jira и GitLab — автозагрузка скриншота с индикатором прогресса и вставкой разметки" width="1269" height="833" loading="lazy" decoding="async" />
           </picture>
         </div>
       </div>
@@ -680,7 +682,7 @@
           </details>
           <details class="faq-item">
             <summary class="faq-item__q">Чем Litely отличается от HandBrake?</summary>
-            <p class="faq-item__a">Litely создан для автоматизации — добавь папку наблюдения, и каждый новый файл сожмётся автоматически. Не нужно настраивать каждый файл. Также включает сжатие изображений, интеграцию с Jira, пакетный ресайз и нативный лёгкий интерфейс (&lt;40 МБ памяти).</p>
+            <p class="faq-item__a">Litely создан для автоматизации — добавь папку наблюдения, и каждый новый файл сожмётся автоматически. Не нужно настраивать каждый файл. Также включает сжатие изображений, интеграцию с Jira и GitLab, пакетный ресайз и нативный лёгкий интерфейс (&lt;40 МБ памяти).</p>
           </details>
           <details class="faq-item">
             <summary class="faq-item__q">Litely работает в фоне?</summary>
