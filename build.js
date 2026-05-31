@@ -6,9 +6,11 @@ const { minify: minifyJS } = require('terser');
 
 const DIST = path.join(__dirname, 'docs');
 
-// App version is pulled from the litely-code repo at build time and injected
-// into the __APP_VERSION__ placeholders. Falls back to the landing's own
-// package.json version if the code repo isn't available (e.g. CI without it).
+// App version is pulled from the litely-code repo at build time and stamped
+// over the version shown in the logo and the SoftwareApplication schema.
+// The source files keep a real version so local preview stays clean; the
+// build always re-syncs it. Falls back to the landing's own package.json
+// version if the code repo isn't available (e.g. CI without it).
 function resolveAppVersion() {
   const candidates = [
     path.join(__dirname, '..', 'litely-code', 'package.json'),
@@ -32,7 +34,9 @@ function resolveAppVersion() {
 const APP_VERSION = resolveAppVersion();
 
 function injectVersion(html) {
-  return html.replace(/__APP_VERSION__/g, APP_VERSION);
+  return html
+    .replace(/(<span class="logo__version">)[^<]*(<\/span>)/g, `$1${APP_VERSION}$2`)
+    .replace(/("softwareVersion":\s*")[^"]*(")/g, `$1${APP_VERSION}$2`);
 }
 
 async function build() {
@@ -134,13 +138,24 @@ async function build() {
     console.log(`RU Privacy: ${ruPrivHTML.length} → ${minRuPriv.length} (${Math.round((1 - minRuPriv.length / ruPrivHTML.length) * 100)}%)`);
   }
 
-  // Copy robots.txt and sitemap.xml
-  for (const file of ['robots.txt', 'sitemap.xml']) {
-    const filePath = path.join(__dirname, file);
-    if (fs.existsSync(filePath)) {
-      fs.copyFileSync(filePath, path.join(DIST, file));
-      console.log(`${file}: copied`);
+  // Copy robots.txt
+  const robotsPath = path.join(__dirname, 'robots.txt');
+  if (fs.existsSync(robotsPath)) {
+    fs.copyFileSync(robotsPath, path.join(DIST, 'robots.txt'));
+    console.log('robots.txt: copied');
+  }
+
+  // Copy sitemap.xml with a fresh lastmod stamped on the main pages
+  const sitemapPath = path.join(__dirname, 'sitemap.xml');
+  if (fs.existsSync(sitemapPath)) {
+    const today = new Date().toISOString().slice(0, 10);
+    let sitemap = fs.readFileSync(sitemapPath, 'utf8');
+    for (const loc of ['https://asdalexey.github.io/litely/', 'https://asdalexey.github.io/litely/ru/']) {
+      const re = new RegExp('(<loc>' + loc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '</loc>\\s*<lastmod>)[^<]+');
+      sitemap = sitemap.replace(re, `$1${today}`);
     }
+    fs.writeFileSync(path.join(DIST, 'sitemap.xml'), sitemap);
+    console.log(`sitemap.xml: lastmod → ${today}`);
   }
 
   // Copy images

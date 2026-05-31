@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
     <meta name="description" content="Free batch video & image compressor for Mac, Windows & Linux. Compress HEIC, WebP, AVIF, TIFF, BMP. H.265, AV1 codecs. GPU-accelerated. Up to 95% smaller." />
-    <meta name="keywords" content="video compression, image compression, video converter, photo optimizer, WebP, AVIF, H.265, AV1, HEIC converter, HEIF to WebP, compress iPhone photos, BMP compressor, TIFF optimizer, macOS, Windows, Linux, native app, batch compression, Jira integration, GitLab integration, folder watcher, paste image into Claude Code, compress screenshot for Claude Code, Codex CLI image, paste screenshot into AI, Aider paste image, Amp image, Kimi CLI image, Cursor paste screenshot, reduce image tokens, AI coding screenshot" />
+    <meta name="keywords" content="video compression, image compression, video converter, photo optimizer, WebP, AVIF, H.265, AV1, HEIC converter, HEIF to WebP, compress iPhone photos, BMP compressor, TIFF optimizer, macOS, Windows, Linux, native app, batch compression, Jira integration, GitLab integration, folder watcher, paste image into Claude Code, compress screenshot for Claude Code, Codex CLI image, paste screenshot into AI, Aider paste image, Amp image, opencode image, Kimi CLI image, Cursor paste screenshot, reduce image tokens, AI coding screenshot" />
     <meta name="author" content="Litely" />
 
     <title>Litely — Free Video &amp; Image Compressor for Mac, Windows &amp; Linux</title>
@@ -33,6 +33,7 @@
     <meta name="twitter:title" content="Litely — Free Video & Image Compressor for Mac, Windows & Linux" />
     <meta name="twitter:description" content="Auto-compress folders with H.265, AV1, WebP, AVIF, HEIC. Up to 95% smaller. Mac, Windows, Linux." />
     <meta name="twitter:image" content="https://asdalexey.github.io/litely/images/og-image.png" />
+    <meta name="twitter:image:alt" content="Litely app — batch video and image compression for Mac, Windows and Linux" />
 
     <meta name="theme-color" content="#0a0a0f" />
     <script>try{if(!sessionStorage.getItem('litely-lang')&&/^ru\b/i.test(navigator.language))location.replace('ru/'+location.hash)}catch(e){}</script>
@@ -59,7 +60,7 @@
         "description": "Automatic batch compression of videos, images, and SVG with watch folders, GPU-accelerated encoding, and native performance.",
         "applicationCategory": "MultimediaApplication",
         "operatingSystem": "macOS 11+, Windows 10+, Linux (Ubuntu 22+, Fedora 38+)",
-        "softwareVersion": "__APP_VERSION__",
+        "softwareVersion": "0.18.0",
         "fileSize": "7 MB",
         "memoryRequirements": "40 MB",
         "downloadUrl": "https://github.com/ASDAlexey/litely/releases/latest/download/Litely_aarch64.dmg",
@@ -164,7 +165,7 @@
             "name": "Can I paste compressed screenshots into Claude Code, Codex, or Aider?",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. Litely auto-compresses every screenshot you take and copies it to your clipboard. Press Ctrl+V to drop it into terminal agents like Claude Code, Aider, Amp, or Kimi CLI, attach it to OpenAI Codex, or paste it into editor tools like Cursor, Cline, and Kilo Code — then ask the assistant to fix, write, or improve the code. Smaller images upload faster, use fewer tokens, and stay under each model's image-size limit. Output is WebP, PNG, or JPEG — the formats vision models accept."
+              "text": "Yes. Litely auto-compresses every screenshot you take and copies it to your clipboard. Press Ctrl+V to drop it into terminal agents like Claude Code, Aider, Amp, or Kimi CLI, attach it to OpenAI Codex or opencode, or paste it into editor tools like Cursor, Cline, and Kilo Code — then ask the assistant to fix, write, or improve the code. Smaller images upload faster, use fewer tokens, and stay under each model's image-size limit. Output is WebP, PNG, or JPEG — the formats vision models accept."
             }
           },
           {
@@ -202,10 +203,10 @@
       <div class="container header__inner">
         <a href="#" class="logo">
           <span class="logo__icon" aria-hidden="true">
-            <svg width="20" height="20" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient gradientUnits="userSpaceOnUse" id="feather" x1="20" x2="60" y1="10" y2="70"><stop stop-color="#a78bfa"/><stop offset="1" stop-color="#3b82f6"/></linearGradient></defs><rect fill="#0a1628" height="80" rx="18" width="80"/><path d="M54 18C54 18 22 36 24 56C24 56 30 46 38 42C32 48 28 56 28 56C28 56 58 38 54 18Z" fill="url(#feather)" opacity="0.9"/><path d="M38 42C30 46 26 54 26 56C26 56 42 32 54 18" fill="none" opacity="0.5" stroke="white" stroke-width="1.5"/><line opacity="0.6" stroke="#a78bfa" stroke-linecap="round" stroke-width="1.5" x1="24" x2="20" y1="56" y2="64"/><circle cx="58" cy="16" fill="#c4b5fd" opacity="0.7" r="1.2"/><circle cx="62" cy="24" fill="#a78bfa" opacity="0.5" r="0.8"/></svg>
+            <svg width="20" height="20" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient gradientUnits="userSpaceOnUse" id="feather" x1="20" x2="60" y1="10" y2="70"><stop offset="0" stop-color="#a78bfa"/><stop offset="1" stop-color="#3b82f6"/></linearGradient></defs><rect fill="#0a1628" height="80" rx="18" width="80"/><path d="M54 18C54 18 22 36 24 56C24 56 30 46 38 42C32 48 28 56 28 56C28 56 58 38 54 18Z" fill="url(#feather)" opacity="0.9"/><path d="M38 42C30 46 26 54 26 56C26 56 42 32 54 18" fill="none" opacity="0.5" stroke="white" stroke-width="1.5"/><line opacity="0.6" stroke="#a78bfa" stroke-linecap="round" stroke-width="1.5" x1="24" x2="20" y1="56" y2="64"/><circle cx="58" cy="16" fill="#c4b5fd" opacity="0.7" r="1.2"/><circle cx="62" cy="24" fill="#a78bfa" opacity="0.5" r="0.8"/></svg>
           </span>
           Litely
-          <span class="logo__version">__APP_VERSION__</span>
+          <span class="logo__version">0.18.0</span>
         </a>
         <span class="logo__slogan" data-i18n="header.slogan">make your media lighter</span>
         <nav class="nav" aria-label="Main navigation">
@@ -382,7 +383,7 @@
             <span class="label label--unique" data-i18n="ai.tools">Claude Code &middot; Codex &middot; Aider &middot; Kimi</span>
           </div>
           <h2 class="section__title section__title--xl" data-i18n="ai.title">Paste Screenshots Straight Into Claude Code, Codex &amp; Any AI Coding Agent</h2>
-          <p class="section__desc" data-i18n="ai.desc">The fastest way to brief an AI coding assistant is a picture. Snap a screenshot of a bug, a stack trace, a Figma frame, or a chunk of code &mdash; Litely compresses it on the spot and drops it on your clipboard. Switch to your terminal, press <kbd>Ctrl+V</kbd>, and say &ldquo;fix this&rdquo;. It works with the tools you already use &mdash; Claude Code, OpenAI Codex, Aider, Amp, Kimi CLI, Cursor and more. A lighter image uploads in a blink, burns fewer tokens, and always stays under the model&rsquo;s image-size limit.</p>
+          <p class="section__desc" data-i18n="ai.desc">The fastest way to brief an AI coding assistant is a picture. Snap a screenshot of a bug, a stack trace, a Figma frame, or a chunk of code &mdash; Litely compresses it on the spot and drops it on your clipboard. Switch to your terminal, press <kbd>Ctrl+V</kbd>, and say &ldquo;fix this&rdquo;. It works with the tools you already use &mdash; Claude Code, OpenAI Codex, Aider, Amp, opencode, Kimi CLI, Cursor and more. A lighter image uploads in a blink, burns fewer tokens, and always stays under the model&rsquo;s image-size limit.</p>
         </div>
 
         <div class="jira-demo jira-demo--narrow" data-reveal>
@@ -406,7 +407,7 @@
           <div class="jira-timeline__step">
             <div class="jira-timeline__marker">3</div>
             <h3 class="jira-timeline__title" data-i18n="ai.w3t">Paste into your AI tool</h3>
-            <p class="jira-timeline__desc" data-i18n="ai.w3d">Press <kbd>Ctrl+V</kbd> in Claude Code, Aider, Amp, or Kimi CLI, attach it to OpenAI Codex, or drop it into Cursor, Cline, and Kilo Code. The compressed screenshot rides straight into your prompt.</p>
+            <p class="jira-timeline__desc" data-i18n="ai.w3d">Press <kbd>Ctrl+V</kbd> in Claude Code, Aider, Amp, or Kimi CLI, attach it to OpenAI Codex or opencode, or drop it into Cursor, Cline, and Kilo Code. The compressed screenshot rides straight into your prompt.</p>
           </div>
           <div class="jira-timeline__step">
             <div class="jira-timeline__marker">4</div>
@@ -418,7 +419,7 @@
         <div class="jira-chips" data-reveal>
           <span class="jira-chip" data-i18n="ai.f1">Claude Code</span>
           <span class="jira-chip" data-i18n="ai.f2">OpenAI Codex</span>
-          <span class="jira-chip" data-i18n="ai.f3">Aider, Amp &amp; Kimi CLI</span>
+          <span class="jira-chip" data-i18n="ai.f3">Aider, Amp, Kimi &amp; opencode</span>
           <span class="jira-chip" data-i18n="ai.f4">Cursor, Cline &amp; Kilo Code</span>
           <span class="jira-chip" data-i18n="ai.f5">Auto-copy to clipboard</span>
           <span class="jira-chip" data-i18n="ai.f6">Fewer tokens, faster upload</span>
