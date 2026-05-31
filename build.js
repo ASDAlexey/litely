@@ -6,7 +6,38 @@ const { minify: minifyJS } = require('terser');
 
 const DIST = path.join(__dirname, 'docs');
 
+// App version is pulled from the litely-code repo at build time and injected
+// into the __APP_VERSION__ placeholders. Falls back to the landing's own
+// package.json version if the code repo isn't available (e.g. CI without it).
+function resolveAppVersion() {
+  const candidates = [
+    path.join(__dirname, '..', 'litely-code', 'package.json'),
+    path.join(__dirname, '..', 'litely-code', 'src-tauri', 'tauri.conf.json'),
+  ];
+
+  for (const candidate of candidates) {
+    try {
+      const version = JSON.parse(fs.readFileSync(candidate, 'utf8')).version;
+      if (version && version !== '../package.json') {
+        return version;
+      }
+    } catch (_) {
+      // try next candidate
+    }
+  }
+
+  return require('./package.json').version;
+}
+
+const APP_VERSION = resolveAppVersion();
+
+function injectVersion(html) {
+  return html.replace(/__APP_VERSION__/g, APP_VERSION);
+}
+
 async function build() {
+  console.log(`App version: ${APP_VERSION}`);
+
   // Clean & create dist
   fs.rmSync(DIST, { recursive: true, force: true });
   fs.mkdirSync(DIST, { recursive: true });
@@ -24,7 +55,7 @@ async function build() {
   console.log(`JS:  ${js.length} → ${minJSResult.code.length} (${Math.round((1 - minJSResult.code.length / js.length) * 100)}%)`);
 
   // Minify HTML
-  const html = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
+  const html = injectVersion(fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8'));
   const minHTML = await minifyHTML(html, {
     collapseWhitespace: true,
     removeComments: true,
@@ -73,7 +104,7 @@ async function build() {
   fs.mkdirSync(ruDir, { recursive: true });
   const ruIndexPath = path.join(__dirname, 'ru', 'index.html');
   if (fs.existsSync(ruIndexPath)) {
-    const ruHTML = fs.readFileSync(ruIndexPath, 'utf8');
+    const ruHTML = injectVersion(fs.readFileSync(ruIndexPath, 'utf8'));
     const minRuHTML = await minifyHTML(ruHTML, {
       collapseWhitespace: true,
       removeComments: true,
