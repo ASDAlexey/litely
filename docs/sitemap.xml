@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://asdalexey.github.io/litely/</loc>
     <lastmod>2026-06-01</lastmod>
@@ -8,6 +9,14 @@
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://asdalexey.github.io/litely/" />
     <xhtml:link rel="alternate" hreflang="ru" href="https://asdalexey.github.io/litely/ru/" />
+    <image:image><image:loc>https://asdalexey.github.io/litely/images/og-image.png</image:loc></image:image>
+    <image:image><image:loc>https://asdalexey.github.io/litely/images/app-dark.webp</image:loc></image:image>
+    <image:image><image:loc>https://asdalexey.github.io/litely/images/app-light.webp</image:loc></image:image>
+    <image:image><image:loc>https://asdalexey.github.io/litely/images/ai-coding-flow.webp</image:loc></image:image>
+    <image:image><image:loc>https://asdalexey.github.io/litely/images/claude-card.webp</image:loc></image:image>
+    <image:image><image:loc>https://asdalexey.github.io/litely/images/codex-card.webp</image:loc></image:image>
+    <image:image><image:loc>https://asdalexey.github.io/litely/images/cursor-card.webp</image:loc></image:image>
+    <image:image><image:loc>https://asdalexey.github.io/litely/images/jira-demo.webp</image:loc></image:image>
   </url>
   <url>
     <loc>https://asdalexey.github.io/litely/ru/</loc>
