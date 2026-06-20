@@ -554,6 +554,12 @@ a.lang-btn {
   padding-top: 0;
 }
 
+/* Alt sections have a distinct background, so they keep their top padding
+   to avoid the eyebrow label sitting flush against the colored edge */
+.section + .section--alt {
+  padding-top: 64px;
+}
+
 /* Performance: skip rendering of off-screen sections */
 .section:not(:first-of-type),
 .stats,
@@ -1187,6 +1193,13 @@ a.lang-btn {
 
 .card-grid--3 {
   grid-template-columns: repeat(3, 1fr);
+}
+
+/* Center a lone trailing card that would otherwise sit alone on the left */
+@media (min-width: 901px) {
+  .card-grid--3 > .card:last-child:nth-child(3n + 1) {
+    grid-column: 2;
+  }
 }
 
 .card {
