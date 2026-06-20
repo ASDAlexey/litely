@@ -921,6 +921,7 @@
               <a href="https://github.com/ASDAlexey/litely/releases/latest/download/litely_amd64.AppImage" class="btn btn--primary btn--sm" rel="noopener noreferrer">x64 AppImage</a>
               <a href="https://github.com/ASDAlexey/litely/releases/latest/download/litely_amd64.deb" class="btn btn--ghost btn--sm" rel="noopener noreferrer">x64 .deb</a>
             </div>
+            <p class="platform__note" data-i18n="dl.linux.note">AppImage: run <code>chmod +x</code> to make it executable.</p>
           </div>
         </div>
         <div class="macguide" id="macguide" data-reveal>
@@ -941,6 +942,21 @@
           <p class="macguide__foot" data-i18n="dl.mac.foot">
             <svg class="macguide__foot-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <span><strong>This is temporary.</strong> Full Apple notarization lands the moment Litely grows up a little more &mdash; then this step disappears for good. Thanks for being an early supporter. 💜</span>
+          </p>
+        </div>
+        <div class="macguide" id="winguide" data-reveal hidden>
+          <span class="macguide__badge" data-i18n="dl.win.badge">Windows first launch</span>
+          <h3 class="macguide__title" data-i18n="dl.win.title">&ldquo;Windows protected your PC&rdquo;? Here&rsquo;s the 5-second fix.</h3>
+          <p class="macguide__lead" data-i18n="dl.win.lead">Litely is a young, independent app &mdash; and growing fast. To keep it free and honest while we get there, we haven&rsquo;t yet bought a Windows code-signing certificate, so on the very first launch SmartScreen shows a one-time &ldquo;unknown publisher&rdquo; notice. It&rsquo;s completely safe and takes five seconds &mdash; just follow the steps below.</p>
+          <ol class="macguide__steps">
+            <li data-i18n="dl.win.s1">Run the installer. Windows SmartScreen shows a blue <strong>&ldquo;Windows protected your PC&rdquo;</strong> screen</li>
+            <li data-i18n="dl.win.s2">Click <strong>More info</strong></li>
+            <li data-i18n="dl.win.s3">Click <strong>Run anyway</strong> to start the installation</li>
+          </ol>
+          <!-- TODO: add SmartScreen screenshot here, e.g. images/windows-run-anyway.webp (mirror the macguide__shot figure above) -->
+          <p class="macguide__foot" data-i18n="dl.win.foot">
+            <svg class="macguide__foot-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span><strong>This is temporary.</strong> A signed installer lands the moment Litely grows up a little more &mdash; then this step disappears for good. Thanks for being an early supporter. 💜</span>
           </p>
         </div>
         <a href="https://github.com/ASDAlexey/litely/releases" class="link" target="_blank" rel="noopener noreferrer" data-i18n="dl.all">All releases on GitHub &rarr;</a>

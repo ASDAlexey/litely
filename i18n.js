@@ -38,6 +38,23 @@ function setupOSDetection() {
     }
   });
 
+  // Show the first-launch guide that matches the visitor's OS. macOS and
+  // Windows ship unsigned, so each gets a reassurance block; Linux has no
+  // equivalent gatekeeper, so neither guide is shown there.
+  var macGuide = document.getElementById('macguide');
+  var winGuide = document.getElementById('winguide');
+  var activeGuide = macGuide;
+
+  if (os === 'windows') {
+    if (macGuide) macGuide.hidden = true;
+    if (winGuide) winGuide.hidden = false;
+    activeGuide = winGuide;
+  } else if (os === 'linux') {
+    if (macGuide) macGuide.hidden = true;
+    if (winGuide) winGuide.hidden = true;
+    activeGuide = null;
+  }
+
   var primaryBtn = document.getElementById('primaryDownload');
   if (!primaryBtn) return;
   var btnText = primaryBtn.querySelector('span');
@@ -60,10 +77,10 @@ function setupOSDetection() {
   }
 
   // When the link triggers a direct download (no navigation), also scroll the
-  // visitor down to the first-launch guide so they see the macOS steps.
+  // visitor down to the first-launch guide for their OS so they see the steps.
   if (directDownload) {
     primaryBtn.addEventListener('click', function () {
-      var guide = document.getElementById('macguide') || document.getElementById('download');
+      var guide = activeGuide || document.getElementById('download');
       if (guide) guide.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   }

@@ -921,6 +921,7 @@
               <a href="https://github.com/ASDAlexey/litely/releases/latest/download/litely_amd64.AppImage" class="btn btn--primary btn--sm" rel="noopener noreferrer">x64 AppImage</a>
               <a href="https://github.com/ASDAlexey/litely/releases/latest/download/litely_amd64.deb" class="btn btn--ghost btn--sm" rel="noopener noreferrer">x64 .deb</a>
             </div>
+            <p class="platform__note" data-i18n="dl.linux.note">AppImage: выполните <code>chmod +x</code>, чтобы сделать файл исполняемым.</p>
           </div>
         </div>
         <div class="macguide" id="macguide" data-reveal>
@@ -941,6 +942,21 @@
           <p class="macguide__foot" data-i18n="dl.mac.foot">
             <svg class="macguide__foot-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <span><strong>Это временно.</strong> Полная нотаризация Apple появится, как только Litely немного подрастёт &mdash; и тогда этот шаг исчезнет навсегда. Спасибо, что с нами с самого начала. 💜</span>
+          </p>
+        </div>
+        <div class="macguide" id="winguide" data-reveal hidden>
+          <span class="macguide__badge" data-i18n="dl.win.badge">Первый запуск на Windows</span>
+          <h3 class="macguide__title" data-i18n="dl.win.title">&laquo;Система Windows защитила ваш компьютер&raquo;? Решается за 5 секунд.</h3>
+          <p class="macguide__lead" data-i18n="dl.win.lead">Litely &mdash; молодое независимое приложение, и оно быстро растёт. Чтобы пока оставаться бесплатным и честным, мы ещё не купили сертификат подписи кода для Windows, поэтому при самом первом запуске SmartScreen один раз показывает предупреждение о &laquo;неизвестном издателе&raquo;. Это полностью безопасно и занимает пять секунд &mdash; просто выполните шаги ниже.</p>
+          <ol class="macguide__steps">
+            <li data-i18n="dl.win.s1">Запустите установщик. Windows SmartScreen покажет синий экран <strong>&laquo;Система Windows защитила ваш компьютер&raquo;</strong></li>
+            <li data-i18n="dl.win.s2">Нажмите <strong>Подробнее</strong></li>
+            <li data-i18n="dl.win.s3">Нажмите <strong>Выполнить в любом случае</strong>, чтобы начать установку</li>
+          </ol>
+          <!-- TODO: добавить скриншот SmartScreen, напр. images/windows-run-anyway.webp (по образцу macguide__shot выше) -->
+          <p class="macguide__foot" data-i18n="dl.win.foot">
+            <svg class="macguide__foot-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span><strong>Это временно.</strong> Подписанный установщик появится, как только Litely немного подрастёт &mdash; и тогда этот шаг исчезнет навсегда. Спасибо, что с нами с самого начала. 💜</span>
           </p>
         </div>
         <a href="https://github.com/ASDAlexey/litely/releases" class="link" target="_blank" rel="noopener noreferrer" data-i18n="dl.all">Все версии на GitHub &rarr;</a>
