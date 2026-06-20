@@ -1462,38 +1462,25 @@ a.lang-btn {
   font-weight: 600;
 }
 
-.macguide__methods {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
-  margin-top: 24px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border);
-}
-
-.macguide__way {
-  display: block;
-  margin-bottom: 14px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-}
-
 .macguide__steps {
   list-style: none;
   counter-reset: macstep;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 14px;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border);
 }
 
 .macguide__steps li {
   position: relative;
-  padding-left: 36px;
-  font-size: 0.875rem;
-  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  min-height: 30px;
+  padding-left: 44px;
+  font-size: 0.95rem;
+  line-height: 1.45;
   color: var(--text-secondary);
   counter-increment: macstep;
 }
@@ -1502,79 +1489,16 @@ a.lang-btn {
   content: counter(macstep);
   position: absolute;
   left: 0;
-  top: -2px;
   display: grid;
   place-items: center;
-  width: 24px;
-  height: 24px;
-  font-size: 0.72rem;
+  width: 30px;
+  height: 30px;
+  font-size: 0.82rem;
   font-weight: 700;
   color: var(--accent-light);
   background: var(--accent-glow);
   border: 1px solid var(--border-hover);
   border-radius: 50%;
-}
-
-.macguide__hint {
-  margin-bottom: 12px;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: var(--text-secondary);
-}
-
-.macguide__cmd {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 9px 9px 9px 14px;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-}
-
-.macguide__cmd code {
-  flex: 1;
-  overflow-x: auto;
-  font-family: 'SF Mono', 'Fira Code', monospace;
-  font-size: 0.76rem;
-  color: var(--text);
-  white-space: nowrap;
-}
-
-.macguide__copy {
-  flex-shrink: 0;
-  display: grid;
-  place-items: center;
-  width: 34px;
-  height: 34px;
-  color: var(--text-muted);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-xs);
-  cursor: pointer;
-  transition: color 0.2s, border-color 0.2s;
-}
-
-.macguide__copy:hover {
-  color: var(--text);
-  border-color: var(--border-hover);
-}
-
-.macguide__copy-icon--done {
-  display: none;
-}
-
-.macguide__copy--done {
-  color: var(--green);
-  border-color: var(--green);
-}
-
-.macguide__copy--done .macguide__copy-icon--copy {
-  display: none;
-}
-
-.macguide__copy--done .macguide__copy-icon--done {
-  display: block;
 }
 
 .macguide__foot {
@@ -1845,11 +1769,6 @@ a.lang-btn {
   .platforms {
     grid-template-columns: 1fr;
     max-width: 400px;
-  }
-
-  .macguide__methods {
-    grid-template-columns: 1fr;
-    gap: 24px;
   }
 
   .stats__grid {

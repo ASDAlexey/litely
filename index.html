@@ -926,28 +926,12 @@
         <div class="macguide" id="macguide" data-reveal>
           <span class="macguide__badge" data-i18n="dl.mac.badge">macOS first launch</span>
           <h3 class="macguide__title" data-i18n="dl.mac.title">&ldquo;Litely can&rsquo;t be opened&rdquo;? Here&rsquo;s the 5-second fix.</h3>
-          <p class="macguide__lead" data-i18n="dl.mac.lead">Litely is a young, independent app &mdash; and growing fast. To keep it free and honest while we get there, we haven&rsquo;t yet paid Apple&rsquo;s $99/year notarization fee, so on the very first launch macOS shows a one-time &ldquo;unidentified developer&rdquo; notice. It&rsquo;s completely safe and takes five seconds &mdash; pick whichever method you like below.</p>
-          <div class="macguide__methods">
-            <div class="macguide__method">
-              <span class="macguide__way" data-i18n="dl.mac.way1">The easy way</span>
-              <ol class="macguide__steps">
-                <li data-i18n="dl.mac.s1"><strong>Right-click</strong> (or Control-click) <strong>Litely</strong> in Applications</li>
-                <li data-i18n="dl.mac.s2">Choose <strong>Open</strong> from the menu</li>
-                <li data-i18n="dl.mac.s3">Click <strong>Open</strong> again to confirm</li>
-              </ol>
-            </div>
-            <div class="macguide__method">
-              <span class="macguide__way" data-i18n="dl.mac.way2">Or via Terminal</span>
-              <p class="macguide__hint" data-i18n="dl.mac.thint">Paste this command and press Return:</p>
-              <div class="macguide__cmd">
-                <code id="macCmd">xattr -dr com.apple.quarantine /Applications/Litely.app</code>
-                <button type="button" class="macguide__copy" id="macCopy" data-copy="xattr -dr com.apple.quarantine /Applications/Litely.app" aria-label="Copy command" data-i18n-aria="dl.mac.copy">
-                  <svg class="macguide__copy-icon--copy" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                  <svg class="macguide__copy-icon--done" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
+          <p class="macguide__lead" data-i18n="dl.mac.lead">Litely is a young, independent app &mdash; and growing fast. To keep it free and honest while we get there, we haven&rsquo;t yet paid Apple&rsquo;s $99/year notarization fee, so on the very first launch macOS shows a one-time &ldquo;unidentified developer&rdquo; notice. It&rsquo;s completely safe and takes five seconds &mdash; just follow the steps below.</p>
+          <ol class="macguide__steps">
+            <li data-i18n="dl.mac.s1">Open <strong>Applications</strong> and <strong>right-click</strong> (or Control-click) <strong>Litely</strong></li>
+            <li data-i18n="dl.mac.s2">Choose <strong>Open</strong> from the menu</li>
+            <li data-i18n="dl.mac.s3">Click <strong>Open</strong> once more to confirm &mdash; that&rsquo;s it</li>
+          </ol>
           <p class="macguide__foot" data-i18n="dl.mac.foot">
             <svg class="macguide__foot-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <span><strong>This is temporary.</strong> Full Apple notarization lands the moment Litely grows up a little more &mdash; then this step disappears for good. Thanks for being an early supporter. 💜</span>

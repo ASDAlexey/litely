@@ -924,28 +924,12 @@
         <div class="macguide" id="macguide" data-reveal>
           <span class="macguide__badge" data-i18n="dl.mac.badge">Первый запуск на macOS</span>
           <h3 class="macguide__title" data-i18n="dl.mac.title">&laquo;Не удаётся открыть Litely&raquo;? Решается за 5 секунд.</h3>
-          <p class="macguide__lead" data-i18n="dl.mac.lead">Litely &mdash; молодое независимое приложение, и оно быстро растёт. Чтобы пока оставаться бесплатным и честным, мы ещё не оплатили нотаризацию Apple ($99 в год), поэтому при самом первом запуске macOS один раз показывает предупреждение о &laquo;неустановленном разработчике&raquo;. Это полностью безопасно и занимает пять секунд &mdash; выберите любой удобный способ ниже.</p>
-          <div class="macguide__methods">
-            <div class="macguide__method">
-              <span class="macguide__way" data-i18n="dl.mac.way1">Простой способ</span>
-              <ol class="macguide__steps">
-                <li data-i18n="dl.mac.s1"><strong>Правый клик</strong> (или Control-клик) по <strong>Litely</strong> в Программах</li>
-                <li data-i18n="dl.mac.s2">Выберите <strong>Открыть</strong> в меню</li>
-                <li data-i18n="dl.mac.s3">Нажмите <strong>Открыть</strong> ещё раз для подтверждения</li>
-              </ol>
-            </div>
-            <div class="macguide__method">
-              <span class="macguide__way" data-i18n="dl.mac.way2">Или через Терминал</span>
-              <p class="macguide__hint" data-i18n="dl.mac.thint">Вставьте команду и нажмите Return:</p>
-              <div class="macguide__cmd">
-                <code id="macCmd">xattr -dr com.apple.quarantine /Applications/Litely.app</code>
-                <button type="button" class="macguide__copy" id="macCopy" data-copy="xattr -dr com.apple.quarantine /Applications/Litely.app" aria-label="Скопировать команду" data-i18n-aria="dl.mac.copy">
-                  <svg class="macguide__copy-icon--copy" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-                  <svg class="macguide__copy-icon--done" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>
-                </button>
-              </div>
-            </div>
-          </div>
+          <p class="macguide__lead" data-i18n="dl.mac.lead">Litely &mdash; молодое независимое приложение, и оно быстро растёт. Чтобы пока оставаться бесплатным и честным, мы ещё не оплатили нотаризацию Apple ($99 в год), поэтому при самом первом запуске macOS один раз показывает предупреждение о &laquo;неустановленном разработчике&raquo;. Это полностью безопасно и занимает пять секунд &mdash; просто выполните шаги ниже.</p>
+          <ol class="macguide__steps">
+            <li data-i18n="dl.mac.s1">Откройте <strong>Программы</strong> и нажмите <strong>правой кнопкой</strong> (или Control-клик) по <strong>Litely</strong></li>
+            <li data-i18n="dl.mac.s2">Выберите <strong>Открыть</strong> в меню</li>
+            <li data-i18n="dl.mac.s3">Нажмите <strong>Открыть</strong> ещё раз для подтверждения &mdash; готово</li>
+          </ol>
           <p class="macguide__foot" data-i18n="dl.mac.foot">
             <svg class="macguide__foot-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             <span><strong>Это временно.</strong> Полная нотаризация Apple появится, как только Litely немного подрастёт &mdash; и тогда этот шаг исчезнет навсегда. Спасибо, что с нами с самого начала. 💜</span>
