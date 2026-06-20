@@ -130,8 +130,25 @@ function initSmoothScroll() {
   });
 }
 
+/* ═══ Copy macOS Command ═══ */
+function initCopyCommand() {
+  var btn = document.getElementById('macCopy');
+  if (!btn || !navigator.clipboard) return;
+
+  btn.addEventListener('click', function () {
+    var text = btn.getAttribute('data-copy') || '';
+    navigator.clipboard.writeText(text).then(function () {
+      btn.classList.add('macguide__copy--done');
+      setTimeout(function () {
+        btn.classList.remove('macguide__copy--done');
+      }, 1800);
+    }).catch(function () {});
+  });
+}
+
 /* ═══ Init ═══ */
 setupOSDetection();
 initScrollReveal();
 initCounters();
 initSmoothScroll();
+initCopyCommand();
