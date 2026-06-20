@@ -894,7 +894,7 @@
               <a href="https://github.com/ASDAlexey/litely/releases/latest/download/Litely_x64.dmg" class="btn btn--ghost btn--sm" rel="noopener noreferrer">Intel</a>
             </div>
           </div>
-          <div class="platform platform--soon" id="platform-windows">
+          <div class="platform" id="platform-windows">
             <div class="platform__header">
               <svg class="platform__os-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M0 3.449L9.75 2.1v9.451H0m10.949-9.602L24 0v11.4H10.949M0 12.6h9.75v9.451L0 20.699M10.949 12.6H24V24l-12.9-1.801"/></svg>
               <div>
@@ -904,10 +904,11 @@
               <span class="platform__detect" id="detect-windows"></span>
             </div>
             <div class="platform__actions">
-              <span class="platform__coming" data-i18n="dl.coming">Скоро</span>
+              <a href="https://github.com/ASDAlexey/litely/releases/latest/download/Litely_x64-setup.exe" class="btn btn--primary btn--sm" rel="noopener noreferrer">x64</a>
+              <a href="https://github.com/ASDAlexey/litely/releases/latest/download/Litely_arm64-setup.exe" class="btn btn--ghost btn--sm" rel="noopener noreferrer">ARM64</a>
             </div>
           </div>
-          <div class="platform platform--soon" id="platform-linux">
+          <div class="platform" id="platform-linux">
             <div class="platform__header">
               <svg class="platform__os-icon" width="32" height="32" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.504 0c-.155 0-.315.008-.48.021-4.226.333-3.105 4.807-3.17 6.298-.076 1.092-.3 1.953-1.05 3.02-.885 1.051-2.127 2.75-2.716 4.521-.278.832-.41 1.684-.287 2.489a.424.424 0 0 0-.11.135c-.26.268-.45.6-.663.839-.199.199-.485.267-.797.4-.313.136-.658.269-.864.68-.09.189-.136.394-.132.602 0 .199.027.4.055.536.058.399.116.728.04.97-.249.68-.28 1.145-.106 1.484.174.334.535.47.94.601.81.2 1.91.135 2.774.6.926.466 1.866.67 2.616.47.526-.116.97-.464 1.208-.946.587-.003 1.23-.269 2.26-.334.699-.058 1.574.267 2.577.2.025.134.063.198.114.333l.003.003c.391.778 1.113 1.362 1.97 1.228.856-.134 1.484-.715 1.816-1.468.22-.49.262-.868.207-1.138-.027-.135-.1-.263-.16-.401-.064-.142-.149-.271-.188-.533-.039-.259.04-.6.103-.799.07-.199.143-.397.198-.597.257-.92.206-1.733-.177-2.47a3.44 3.44 0 0 0-.09-.186c-.275-.47-.94-.986-1.44-1.418-.254-.221-.5-.403-.665-.534-.166-.133-.249-.17-.246-.267.007-.137.02-.27.02-.395 0-.665-.12-1.33-.378-2.005-.392-1.029-1.07-2.08-2.07-3.16-.42-.45-.796-.867-1.104-1.284-.307-.418-.528-.84-.624-1.295-.095-.46-.07-.927.036-1.384.107-.46.29-.906.52-1.324.465-.828.653-1.632.483-2.403-.1-.47-.376-.862-.655-1.146-.282-.285-.566-.455-.75-.55a2.46 2.46 0 0 0-.593-.2c-.096-.015-.174-.023-.27-.023z"/></svg>
               <div>
@@ -917,7 +918,8 @@
               <span class="platform__detect" id="detect-linux"></span>
             </div>
             <div class="platform__actions">
-              <span class="platform__coming" data-i18n="dl.coming">Скоро</span>
+              <a href="https://github.com/ASDAlexey/litely/releases/latest/download/litely_amd64.AppImage" class="btn btn--primary btn--sm" rel="noopener noreferrer">x64 AppImage</a>
+              <a href="https://github.com/ASDAlexey/litely/releases/latest/download/litely_amd64.deb" class="btn btn--ghost btn--sm" rel="noopener noreferrer">x64 .deb</a>
             </div>
           </div>
         </div>
@@ -926,9 +928,9 @@
           <h3 class="macguide__title" data-i18n="dl.mac.title">&laquo;Не удаётся открыть Litely&raquo;? Решается за 5 секунд.</h3>
           <p class="macguide__lead" data-i18n="dl.mac.lead">Litely &mdash; молодое независимое приложение, и оно быстро растёт. Чтобы пока оставаться бесплатным и честным, мы ещё не оплатили нотаризацию Apple ($99 в год), поэтому при самом первом запуске macOS один раз показывает предупреждение о &laquo;неустановленном разработчике&raquo;. Это полностью безопасно и занимает пять секунд &mdash; просто выполните шаги ниже.</p>
           <ol class="macguide__steps">
-            <li data-i18n="dl.mac.s1">Откройте <strong>Программы</strong> и нажмите <strong>правой кнопкой</strong> (или Control-клик) по <strong>Litely</strong></li>
-            <li data-i18n="dl.mac.s2">Выберите <strong>Открыть</strong> в меню</li>
-            <li data-i18n="dl.mac.s3">Нажмите <strong>Открыть</strong> ещё раз для подтверждения &mdash; готово</li>
+            <li data-i18n="dl.mac.s1">Дважды кликните по <strong>Litely</strong>. macOS напишет, что не может открыть &mdash; нажмите <strong>Done</strong></li>
+            <li data-i18n="dl.mac.s2">Откройте <strong>Системные настройки</strong> &rarr; <strong>Конфиденциальность и безопасность</strong></li>
+            <li data-i18n="dl.mac.s3">Пролистайте вниз и нажмите <strong>«Открыть всё равно»</strong> рядом с Litely, затем подтвердите</li>
           </ol>
           <p class="macguide__foot" data-i18n="dl.mac.foot">
             <svg class="macguide__foot-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>

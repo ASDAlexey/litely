@@ -43,15 +43,29 @@ function setupOSDetection() {
   var btnText = primaryBtn.querySelector('span');
   if (!btnText) return;
 
+  var directDownload = false;
+
   if (os === 'mac') {
     primaryBtn.href = 'https://github.com/ASDAlexey/litely/releases/latest/download/Litely_aarch64.dmg';
     btnText.textContent = dlMac;
+    directDownload = true;
   } else if (os === 'windows') {
     primaryBtn.href = 'https://github.com/ASDAlexey/litely/releases/latest/download/Litely_x64-setup.exe';
     btnText.textContent = dlWin;
+    directDownload = true;
   } else if (os === 'linux') {
     primaryBtn.href = 'https://github.com/ASDAlexey/litely/releases/latest/download/litely_amd64.AppImage';
     btnText.textContent = dlLinux;
+    directDownload = true;
+  }
+
+  // When the link triggers a direct download (no navigation), also scroll the
+  // visitor down to the first-launch guide so they see the macOS steps.
+  if (directDownload) {
+    primaryBtn.addEventListener('click', function () {
+      var guide = document.getElementById('macguide') || document.getElementById('download');
+      if (guide) guide.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   }
 }
 

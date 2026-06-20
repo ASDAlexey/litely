@@ -546,7 +546,7 @@ a.lang-btn {
 
 /* ═══ Sections ═══ */
 .section {
-  padding: 100px 0;
+  padding: 64px 0;
 }
 
 /* Uniform spacing: avoid doubled padding between consecutive sections */
@@ -1462,6 +1462,20 @@ a.lang-btn {
   font-weight: 600;
 }
 
+.macguide__shot {
+  margin-top: 24px;
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) - 6px);
+  overflow: hidden;
+  background: var(--bg-subtle);
+}
+
+.macguide__shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .macguide__steps {
   list-style: none;
   counter-reset: macstep;
@@ -1475,12 +1489,10 @@ a.lang-btn {
 
 .macguide__steps li {
   position: relative;
-  display: flex;
-  align-items: center;
-  min-height: 30px;
   padding-left: 44px;
+  min-height: 30px;
   font-size: 0.95rem;
-  line-height: 1.45;
+  line-height: 1.5;
   color: var(--text-secondary);
   counter-increment: macstep;
 }
@@ -1489,6 +1501,7 @@ a.lang-btn {
   content: counter(macstep);
   position: absolute;
   left: 0;
+  top: -2px;
   display: grid;
   place-items: center;
   width: 30px;

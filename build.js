@@ -36,7 +36,11 @@ const APP_VERSION = resolveAppVersion();
 function injectVersion(html) {
   return html
     .replace(/(<span class="logo__version">)[^<]*(<\/span>)/g, `$1${APP_VERSION}$2`)
-    .replace(/("softwareVersion":\s*")[^"]*(")/g, `$1${APP_VERSION}$2`);
+    .replace(/("softwareVersion":\s*")[^"]*(")/g, `$1${APP_VERSION}$2`)
+    // Release assets are named Litely_<version>_<arch>.<ext>; the source keeps
+    // the version-less filename so local preview stays clean, and the build
+    // stamps the current version into every download link (HTML + i18n.js).
+    .replace(/(\/releases\/latest\/download\/[Ll]itely_)/g, `$1${APP_VERSION}_`);
 }
 
 async function build() {
@@ -53,7 +57,7 @@ async function build() {
   console.log(`CSS: ${css.length} → ${minCSS.length} (${Math.round((1 - minCSS.length / css.length) * 100)}%)`);
 
   // Minify JS
-  const js = fs.readFileSync(path.join(__dirname, 'i18n.js'), 'utf8');
+  const js = injectVersion(fs.readFileSync(path.join(__dirname, 'i18n.js'), 'utf8'));
   const minJSResult = await minifyJS(js, { compress: true, mangle: true });
   fs.writeFileSync(path.join(DIST, 'i18n.js'), minJSResult.code);
   console.log(`JS:  ${js.length} → ${minJSResult.code.length} (${Math.round((1 - minJSResult.code.length / js.length) * 100)}%)`);
