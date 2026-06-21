@@ -6,13 +6,14 @@ const { minify: minifyJS } = require('terser');
 
 const DIST = path.join(__dirname, 'docs');
 
-// App version is pulled from the litely-code repo at build time and stamped
-// over the version shown in the logo and the SoftwareApplication schema.
-// The source files keep a real version so local preview stays clean; the
-// build always re-syncs it. Falls back to the landing's own package.json
-// version if the code repo isn't available (e.g. CI without it).
+// App version is the landing's own package.json version — bumped per release
+// to match the published GitHub release tag — and stamped over the version
+// shown in the logo, the SoftwareApplication schema, and every download link.
+// The local litely-code checkout is only a best-effort fallback: it can lag
+// behind the released app, so it must never override the landing's own version.
 function resolveAppVersion() {
   const candidates = [
+    path.join(__dirname, 'package.json'),
     path.join(__dirname, '..', 'litely-code', 'package.json'),
     path.join(__dirname, '..', 'litely-code', 'src-tauri', 'tauri.conf.json'),
   ];

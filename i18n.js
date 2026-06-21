@@ -71,7 +71,7 @@ function setupOSDetection() {
     btnText.textContent = dlWin;
     directDownload = true;
   } else if (os === 'linux') {
-    primaryBtn.href = 'https://github.com/ASDAlexey/litely/releases/latest/download/litely_amd64.AppImage';
+    primaryBtn.href = 'https://github.com/ASDAlexey/litely/releases/latest/download/Litely_amd64.AppImage';
     btnText.textContent = dlLinux;
     directDownload = true;
   }
