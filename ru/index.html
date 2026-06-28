@@ -244,7 +244,12 @@
           <span class="logo__version">0.19.6</span>
         </a>
         <span class="logo__slogan" data-i18n="header.slogan">сделай медиа легче</span>
-        <nav class="nav" aria-label="Main navigation">
+        <button class="nav-toggle" type="button" aria-label="Меню" aria-controls="primary-nav" aria-expanded="false">
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+          <span class="nav-toggle__bar"></span>
+        </button>
+        <nav class="nav" id="primary-nav" aria-label="Main navigation">
           <a href="#features" class="nav__link" data-i18n="nav.features">Возможности</a>
           <a href="#ai-coding" class="nav__link" data-i18n="nav.aicoding">ИИ-код</a>
           <a href="#usecases" class="nav__link" data-i18n="nav.usecases">Сценарии</a>
@@ -421,11 +426,18 @@
           <p class="section__desc" data-i18n="ai.desc">Если вы живёте в Claude Code, Codex или любом ИИ-агенте &mdash; это та самая ежедневная фишка, которой вам не хватало, и это невероятно удобно. Самый быстрый способ объяснить ассистенту задачу &mdash; картинка: сделайте скриншот бага, трейса ошибки, макета из Figma или куска кода, и Litely сожмёт его на лету и положит в буфер обмена. Перейдите в терминал, нажмите <kbd>Cmd+V</kbd> на Mac или <kbd>Ctrl+V</kbd> на Windows/Linux и скажите &laquo;поправь это&raquo; или &laquo;собери это&raquo;. Работает с инструментами, которыми вы уже пользуетесь &mdash; Claude Code, OpenAI Codex, Aider, Amp, opencode, Kimi CLI, Cursor и другими. Лёгкое изображение загружается мгновенно, тратит меньше токенов и всегда остаётся в пределах лимита на размер картинки.</p>
         </div>
 
-        <div class="jira-demo" data-reveal>
-          <picture>
-            <source srcset="../images/ai-coding-flow.avif" type="image/avif" />
-            <img src="../images/ai-coding-flow.webp" alt="Процесс Litely в три шага: сделайте скриншот бага, Litely сжимает его с 4.2 МБ до 180 КБ, затем вставьте его в Claude Code по Ctrl+V — и ИИ правит код" width="1600" height="560" loading="lazy" decoding="async" />
-          </picture>
+        <div class="flow-cards" data-reveal>
+          <figure class="flow-cards__item">
+            <img src="../images/flow-capture.webp" alt="Сделайте скриншот кода или бага" width="440" height="560" loading="lazy" decoding="async" />
+          </figure>
+          <svg class="flow-cards__arrow" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6" /></svg>
+          <figure class="flow-cards__item">
+            <img src="../images/flow-compress.webp" alt="Litely сжимает скриншот с 4.2 МБ до 180 КБ — до 96% меньше" width="440" height="560" loading="lazy" decoding="async" />
+          </figure>
+          <svg class="flow-cards__arrow" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6" /></svg>
+          <figure class="flow-cards__item">
+            <img src="../images/flow-paste.webp" alt="Вставьте в Claude Code по Ctrl+V — и ИИ правит код" width="440" height="560" loading="lazy" decoding="async" />
+          </figure>
         </div>
 
         <div class="jira-timeline" data-reveal>
@@ -970,5 +982,26 @@
         <p>&copy; 2026 Litely &nbsp;&middot;&nbsp; <a href="privacy.html" style="color:var(--text-muted);text-decoration:none">Политика конфиденциальности</a></p>
       </div>
     </footer>
+    <script>
+      (function () {
+        const toggle = document.querySelector('.nav-toggle');
+        const nav = document.getElementById('primary-nav');
+        if (!toggle || !nav) return;
+        function close() {
+          nav.classList.remove('nav--open');
+          toggle.setAttribute('aria-expanded', 'false');
+        }
+        toggle.addEventListener('click', function () {
+          const open = nav.classList.toggle('nav--open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        });
+        nav.addEventListener('click', function (e) {
+          if (e.target.closest('.nav__link')) close();
+        });
+        document.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') close();
+        });
+      })();
+    </script>
   </body>
 </html>
