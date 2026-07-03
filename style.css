@@ -596,9 +596,12 @@ a.lang-btn {
   padding-top: 0;
 }
 
-/* Alt sections have a distinct background, so they keep their top padding
-   to avoid the eyebrow label sitting flush against the colored edge */
-.section + .section--alt {
+/* Sections on a background edge keep their top padding so the eyebrow
+   label / title never sits flush against the colored seam: alt after
+   plain, plain after alt, and the bordered download section */
+.section + .section--alt,
+.section--alt + .section,
+.section + .section--download {
   padding-top: 64px;
 }
 
